@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>new_almasprototyperev1_dd2ce</Name>
+  <AppVersion>2021-07-06T16:27:04Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.21063.34.0</CreatedByClientVersion>
+  <MinClientVersion>3.21063.34.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","sienaVersion":"0480b874-4c99-44b4-a932-ca694de68525","deviceCapabilities":"","supportsPortrait":"false","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.21063.34","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","isUnifiedRootApp":"false"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>rgba(0, 176, 240, 1)</BackgroundColor>
+  <DisplayName>Almas Prototype Rev1</DisplayName>
+  <Description></Description>
+  <CommitMessage></CommitMessage>
+  <Publisher></Publisher>
+  <AuthorizationReferences>[{"resourceId":"https://tonietolligsenvironment.crm11.dynamics.com/"}]</AuthorizationReferences>
+  <ConnectionReferences>{}</ConnectionReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified"}},"dataSources":{"Accounts":{"entitySetName":"accounts","logicalName":"account"},"Views":{"entitySetName":"savedqueries","logicalName":"savedquery"},"Organizations":{"entitySetName":"organizations","logicalName":"organization"},"Trail Balances":{"entitySetName":"cr460_trailbalances","logicalName":"cr460_trailbalance"},"Cost Centres":{"entitySetName":"new_costcentres","logicalName":"new_costcentre"},"BusinessUnits_1":{"entitySetName":"new_businessunits","logicalName":"new_businessunit"}}},"124b4d63-4b84-4d93-baac-93e05a327157":{"databaseDetails":{"referenceType":"Environmental","environmentName":"124b4d63-4b84-4d93-baac-93e05a327157","overrideValues":{"status":"NotSpecified"}},"dataSources":{"BusinessUnits":{"entitySetName":"new_businessunits","logicalName":"new_businessunit"}}}}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"account","componenttype":1},{"logicalname":"savedquery","componenttype":1},{"logicalname":"organization","componenttype":1},{"logicalname":"cr460_trailbalance","componenttype":1},{"logicalname":"new_costcentre","componenttype":1},{"logicalname":"new_businessunit","componenttype":1}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/new_almasprototyperev1_dd2ce_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/new_almasprototyperev1_dd2ce_DocumentUri.msapp</DocumentUri>
+</CanvasApp>
