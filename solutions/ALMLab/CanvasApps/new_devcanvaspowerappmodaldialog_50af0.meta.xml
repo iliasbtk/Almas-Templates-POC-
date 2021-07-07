@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>new_devcanvaspowerappmodaldialog_50af0</Name>
+  <AppVersion>2021-07-06T16:27:08Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.20051.17.0</CreatedByClientVersion>
+  <MinClientVersion>3.20051.17.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","sienaVersion":"20210701T114619Z-3.21063.25.0","deviceCapabilities":"","supportsPortrait":"false","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.20051.17","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","isUnifiedRootApp":"false"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>rgba(0, 176, 240, 1)</BackgroundColor>
+  <DisplayName>DEV-Canvas Power App Modal Dialog</DisplayName>
+  <Description></Description>
+  <CommitMessage></CommitMessage>
+  <Publisher></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{"3f281771-fe57-4622-81d5-9de641fcc709":{"id":"/providers/microsoft.powerapps/apis/shared_office365users","displayName":"Office 365 Users","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1472/1.0.1472.2427/office365users/icon.png","dataSources":["Office365Users"],"dependencies":[],"dependents":[],"parameterHints":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard"}}</ConnectionReferences>
+  <DatabaseReferences>{}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/new_devcanvaspowerappmodaldialog_50af0_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/new_devcanvaspowerappmodaldialog_50af0_DocumentUri.msapp</DocumentUri>
+</CanvasApp>

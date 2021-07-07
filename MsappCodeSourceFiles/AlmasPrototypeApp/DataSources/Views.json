@@ -1,0 +1,246 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "savedqueries",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "savedquery",
+    "MaxGetRowsCount": 500,
+    "Name": "Views",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "advancedgroupby": "Advanced Group By",
+      "columnsetxml": "Column Set XML",
+      "componentstate": "Component State",
+      "conditionalformatting": "Conditional formatting",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "description": "Description",
+      "fetchxml": "Fetch XML",
+      "introducedversion": "Introduced Version",
+      "iscustom": "Is Custom",
+      "isdefault": "Default",
+      "ismanaged": "State",
+      "isquickfindquery": "Quick Find Compatible",
+      "isuserdefined": "User Defined",
+      "layoutjson": "Layout data in JSON format.",
+      "layoutxml": "Layout XML",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "name": "Name",
+      "offlinesqlquery": "Offline SQL Query",
+      "organizationid": "Organization",
+      "organizationtaborder": "Default Organization tab order",
+      "overwritetime": "Record Overwrite Time",
+      "queryapi": "Query API",
+      "queryappusage": "Query Application Usage",
+      "querytype": "Query Type",
+      "SavedQuery_AsyncOperations": "System Jobs",
+      "SavedQuery_BulkDeleteFailures": "Bulk Delete Failures",
+      "SavedQuery_SyncErrors": "Sync Errors",
+      "savedqueryid": "View",
+      "savedqueryidunique": "SavedQueryIdUnique",
+      "solutionid": "Solution",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Views",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Views (Views)",
+    "Name": "_savedquery_views",
+    "RelatedEntityName": "Views",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "12d66b0f-0631-4da9-9bd4-8ef21d1ab552": "Views Advanced Find View",
+      "71ab666c-17c9-4603-8bfd-e56fc896fd69": "SavedQuery Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Component State",
+    "Name": "componentstate",
+    "OptionSetInfoNameMapping": {
+      "0": "Published",
+      "1": "Unpublished",
+      "2": "Deleted",
+      "3": "Deleted Unpublished"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "componentstate",
+        "OptionSetReferenceEntityName": "Views"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "componentstate",
+    "RelatedEntityName": "Views",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Is Component Managed",
+    "Name": "ismanaged",
+    "OptionSetInfoNameMapping": {
+      "0": "Unmanaged",
+      "1": "Managed"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "ismanaged",
+        "OptionSetReferenceEntityName": "Views"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "ismanaged",
+    "RelatedEntityName": "Views",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Is Custom (Views)",
+    "Name": "savedquery_iscustom",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "iscustom",
+        "OptionSetReferenceEntityName": "Views"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "iscustom",
+    "RelatedEntityName": "Views",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Default (Views)",
+    "Name": "savedquery_isdefault",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "isdefault",
+        "OptionSetReferenceEntityName": "Views"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "isdefault",
+    "RelatedEntityName": "Views",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Is Private (Views)",
+    "Name": "savedquery_isprivate",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "isprivate",
+        "OptionSetReferenceEntityName": "Views"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "isprivate",
+    "RelatedEntityName": "Views",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Quick Find Compatible (Views)",
+    "Name": "savedquery_isquickfindquery",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "isquickfindquery",
+        "OptionSetReferenceEntityName": "Views"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "isquickfindquery",
+    "RelatedEntityName": "Views",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "User Defined (Views)",
+    "Name": "savedquery_isuserdefined",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "isuserdefined",
+        "OptionSetReferenceEntityName": "Views"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "isuserdefined",
+    "RelatedEntityName": "Views",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Views)",
+    "Name": "savedquery_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Views"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Views",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Views)",
+    "Name": "savedquery_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Views"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Views",
+    "Type": "OptionSetInfo"
+  }
+]

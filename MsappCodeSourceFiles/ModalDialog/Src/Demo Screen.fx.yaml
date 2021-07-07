@@ -1,0 +1,3029 @@
+"'Demo Screen' As screen":
+    Height: =Max(App.Height, App.DesignHeight)
+    Orientation: =If('Demo Screen'.Width < 'Demo Screen'.Height, Layout.Vertical, Layout.Horizontal)
+    Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= 'Demo Screen'.Width)
+    Width: =Max(App.Width, App.DesignWidth)
+
+    btnOkLink As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Ok",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    // -- Link Information (OPTIONAL) -- //
+                    link: {
+                        label: "More Info",
+                        url: "https://aka.ms/powerapps-popup",
+                        tooltip: "Please check out more information about the modal dialog component"
+                    },
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarOkLink",
+                    originalFunctionRequestID: Blank()
+                }
+            )
+        PressedBorderColor: =btnOkLink.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: |-
+            ="Ok L
+            "
+        Tooltip: =lblOk.Text & " " & lblButtonWithLinkConfirmation.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblOk.X
+        Y: =lblButtonWithLinkConfirmation.Y
+        ZIndex: =1
+
+    btnOk As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Ok",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    // -- Link Information (OPTIONAL) -- //
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarOk",
+                    originalFunctionRequestID: Blank()
+                }
+            )
+        PressedBorderColor: =btnOk.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Ok"
+        Tooltip: =lblOk.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblOk.X
+        Y: =lblButtonConfirmation.Y
+        ZIndex: =2
+
+    btnYesNoLink As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "YesNo",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    // -- Link Information (OPTIONAL) -- //
+                    link: {
+                        label: "More Info",
+                        url: "https://aka.ms/powerapps-popup",
+                        tooltip: "Please check out more information about the modal dialog component"
+                    },
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarYesNoLink",
+                    originalFunctionRequestID: Blank()
+                }
+            )
+        PressedBorderColor: =btnYesNoLink.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="YesNo L"
+        Tooltip: =lblYesNo.Text & " " & lblButtonWithLinkConfirmation.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblYesNo.X
+        Y: =lblButtonWithLinkConfirmation.Y
+        ZIndex: =3
+
+    btnYesNo As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "YesNo",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    // -- Link Information (OPTIONAL) -- //
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarYesNo",
+                    originalFunctionRequestID: Blank()
+                }
+            )
+        PressedBorderColor: =btnYesNo.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="YesNo"
+        Tooltip: =lblYesNo.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblYesNo.X
+        Y: =lblButtonConfirmation.Y
+        ZIndex: =4
+
+    btnYesNoCancelLink As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "YesNoCancel",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    // -- Link Information (OPTIONAL) -- //
+                    link: {
+                        label:"More Info",
+                        url: "https://aka.ms/powerapps-popup",
+                        tooltip: "Please check out more information about the modal dialog component"
+                    },
+            
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarYesNoCancelLink",
+                    originalFunctionRequestID: Blank()
+                }
+            
+            )
+        PressedBorderColor: =btnYesNoCancelLink.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="YesNoCancel L"
+        Tooltip: =lblYesNoCancel.Text & " " & lblButtonWithLinkConfirmation.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblYesNoCancel.X
+        Y: =lblButtonWithLinkConfirmation.Y
+        ZIndex: =5
+
+    btnYesNoCancel As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "YesNoCancel",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    // -- Link Information (OPTIONAL) -- //
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarYesNoCancel",
+                    originalFunctionRequestID: Blank()
+                }
+            
+            )
+        PressedBorderColor: =btnYesNoCancel.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: |-
+            ="YesNoCancel
+            "
+        Tooltip: =lblYesNoCancel.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblYesNoCancel.X
+        Y: =lblButtonConfirmation.Y
+        ZIndex: =6
+
+    btnInputTextLink As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "TextInput",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configTextInput: {
+                        default: "Test",
+                        hintText: "We are looking for the fox's name",
+                        tooltip: "Please type the name of the fox"
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    link: {
+                        label: "More Info",
+                        url: "https://aka.ms/powerapps-popup",
+                        tooltip: "Please check out more information about the modal dialog component"
+                    },
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarTextInputLink",
+                    originalFunctionRequestID: Blank()
+                }
+            )
+        PressedBorderColor: =btnInputTextLink.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="InputText L"
+        Tooltip: =lblTextInput.Text & " " & lblButtonWithLinkInput.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblTextInput.X
+        Y: =lblButtonWithLinkInput.Y
+        ZIndex: =7
+
+    btnInputText As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "TextInput",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configTextInput: {
+                        default: "",
+                        hintText: "We are looking for the fox's name",
+                        tooltip: "Please type the name of the fox"
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarTextInput",
+                    originalFunctionRequestID: Blank()
+                }
+            )
+        PressedBorderColor: =btnInputText.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: |-
+            ="InputText
+            "
+        Tooltip: =lblTextInput.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblTextInput.X
+        Y: =lblButtonInput.Y
+        ZIndex: =8
+
+    btnTextArrayLink As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "TextArray",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configTextArray: {
+                        tooltip:"Please give us the name",
+                        arrayList: ["Donald","Mickey"],
+                        defaultValue: "Donald",
+                        allowMultipleSelect: false
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    link: {
+                        label:"More Info",
+                        url: "https://aka.ms/powerapps-popup",
+                        tooltip: "Please check out more information about the modal dialog component"
+                    },
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarTextArrayLink",
+                    originalFunctionRequestID: Blank()
+                }
+            )
+        PressedBorderColor: =btnTextArrayLink.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="InputArray L"
+        Tooltip: =lblTextArray.Text & " " & lblButtonWithLinkInput.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblTextArray.X
+        Y: =lblButtonWithLinkInput.Y
+        ZIndex: =9
+
+    btnTextArray As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "TextArray",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configTextArray: {
+                        tooltip:"Please give us the name",
+                        arrayList: ["Donald","Mickey"],
+                        defaultValue: "Donald",
+                        allowMultipleSelect: false
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarTextArray",
+                    originalFunctionRequestID: Blank()
+                }
+            )
+        PressedBorderColor: =btnTextArray.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: |-
+            ="InputArray
+            "
+        Tooltip: =lblTextArray.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblTextArray.X
+        Y: =lblButtonInput.Y
+        ZIndex: =10
+
+    btnInputOffice365UsersLink As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "Office365Users",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configOffice365Users: {
+                        tooltip: "Please give us the name",
+                        allowMultipleSelect: false
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    link: {
+                        label: "More Info",
+                        url: "https://aka.ms/powerapps-popup",
+                        tooltip: "Please check out more information about the modal dialog component"
+                    },
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarOffice365UsersLink",
+                    originalFunctionRequestID: Blank()
+                }
+            )
+        PressedBorderColor: =btnInputOffice365UsersLink.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Input365 L"
+        Tooltip: =lblOffice365Users.Text & " " & lblButtonWithLinkInput.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblOffice365Users.X
+        Y: =lblButtonWithLinkInput.Y
+        ZIndex: =11
+
+    btnInputOffice365Users As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "Office365Users",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configOffice365Users: {
+                        tooltip: "Please give us the name",
+                        allowMultipleSelect: false
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarOffice365Users",
+                    originalFunctionRequestID: Blank()
+                }
+            )
+        PressedBorderColor: =btnInputOffice365Users.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: |-
+            ="Input365
+            "
+        Tooltip: =lblOffice365Users.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblOffice365Users.X
+        Y: =lblButtonInput.Y
+        ZIndex: =12
+
+    tglDialogResponseTrigger_1 As toggleSwitch:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Default: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            // If there are responseActions that are received from the dialog, then this toggle should fire     //
+            // to execure the code in the OnCheck event of this control                                         //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            !IsEmpty(colDialogResponses)
+        DisplayMode: =DisplayMode.Disabled
+        FalseHoverFill: =ColorFade(tglDialogResponseTrigger_1.FalseFill, 15%)
+        FalseText: ="Idle"
+        FocusedBorderColor: =tglDialogResponseTrigger_1.BorderColor
+        Font: =Font.'Segoe UI'
+        Height: =40
+        HoverBorderColor: =ColorFade(tglDialogResponseTrigger_1.BorderColor, 15%)
+        OnCheck: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  This toggle control triggers on the colDialogResponses collection and is used to                //
+            //  action responses from the model dialog. As part of the object that is 'sent' to the             //
+            //  modal dialog, we include a responseAction property which identifies the action to take place    //
+            //  if the user selects an option or selects an item from the drop down. This responseAction can    //
+            //  then be tracked by this toggle to initiate certain code or functions. If the responseAction     //
+            //  doesn't contain a value, then we don't have to do anything.                                     //
+            //                                                                                                  //
+            //  For more information about the popup, please go to aka.ms/powerapps-popup                       //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  START: Function Initiation (NO modification required)                                           //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //Get a handle on the response object that caused this toggle to trigger
+            Set(
+                varDialogResponse,
+                Last(colDialogResponses)
+            );
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  Send trace information of debug is enabled                                                      //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            /*--Dawid van Heerden-V0.14-2020/05/24: Ugly workaround to remove the image from the pen input from the response before sending it to the trace because images are not supported in trace*/
+            If(
+                varPopupDebugTrace,
+                Trace(
+                    "cmpPopup Response received",
+                    TraceSeverity.Information,
+                    First(
+                        DropColumns(
+                            Table(varDialogResponse.responseData),
+                            "penInput"
+                        )
+                    )
+                )
+            );
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  END: Function Initiation (NO modification required)                                             //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  START: Actions (Modify as per business requirement)                                             //
+            //      -Here we use a switch statement to determine which responseAction was 'sent' to the dialog, //
+            //      and what should happen when then user clicks on Yes or selects an option from the drop down //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            If(
+                !IsBlank(varDialogResponse.responseAction),
+                //The trigger will only action something if a responseAction value was sent to the dialog
+                //The below examples are added to show the different ways that data is retrieved based on the type of       input that was specified in the popup instruction
+                Switch(
+                    varDialogResponse.responseAction,
+                    "SetVarOk",
+                    Set(
+                        varOk,
+                        varDialogResponse.dialogButtonPressed
+                    ),
+                    "SetVarOkLink",
+                    Set(
+                        varOkLink,
+                        varDialogResponse.dialogButtonPressed
+                    ),
+                    "SetVarOkLinkLong",
+                    Set(
+                        varOkLinkLong,
+                        varDialogResponse.dialogButtonPressed
+                    ),
+                    "SetVarYesNo",
+                    Set(
+                        varYesNo,
+                        varDialogResponse.dialogButtonPressed
+                    ),
+                    "SetVarYesNoLink",
+                    Set(
+                        varYesNoLink,
+                        varDialogResponse.dialogButtonPressed
+                    ),
+                    "SetVarYesNoLinkLong",
+                    Set(
+                        varYesNoLinkLong,
+                        varDialogResponse.dialogButtonPressed
+                    ),
+                    "SetVarYesNoCancel",
+                    Set(
+                        varYesNoCancel,
+                        varDialogResponse.dialogButtonPressed
+                    ),
+                    "SetVarYesNoCancelLink",
+                    Set(
+                        varYesNoCancelLink,
+                        varDialogResponse.dialogButtonPressed
+                    ),
+                    "SetVarYesNoCancelLinkLong",
+                    Set(
+                        varYesNoCancelLinkLong,
+                        varDialogResponse.dialogButtonPressed
+                    ),
+                    "SetVarTextInput",
+                    Set(
+                        varTextInput,
+                        varDialogResponse.responseData.textInput
+                    ),
+                    "SetVarTextInputLink",
+                    Set(
+                        varTextInputLink,
+                        varDialogResponse.responseData.textInput
+                    ),
+                    "SetVarTextInputLinkLong",
+                    Set(
+                        varTextInputLinkLong,
+                        varDialogResponse.responseData.textInput
+                    ),
+                    "SetVarTextArray",
+                    Set(
+                        varTextArray,
+                        varDialogResponse.responseData.textArray
+                    ),
+                    "SetVarTextArrayLink",
+                    Set(
+                        varTextArrayLink,
+                        varDialogResponse.responseData.textArray
+                    ),
+                    "SetVarTextArrayLinkLong",
+                    Set(
+                        varTextArrayLinkLong,
+                        varDialogResponse.responseData.textArray
+                    ),
+                    "SetVarOffice365Users",
+                    Set(
+                        varOffice365Users,
+                        varDialogResponse.responseData.office365Users
+                    ),
+                    "SetVarOffice365UsersLink",
+                    Set(
+                        varOffice365UsersLink,
+                        varDialogResponse.responseData.office365Users
+                    ),
+                    "SetVarOffice365UsersLinkLong",
+                    Set(
+                        varOffice365UsersLinkLong,
+                        varDialogResponse.responseData.office365Users
+                    ),
+                    "SetVarRating",
+                    Set(
+                        varRating,
+                        varDialogResponse.responseData.rating
+                    ),
+                    "SetVarRatingLink",
+                    Set(
+                        varRatingLink,
+                        varDialogResponse.responseData.rating
+                    ),
+                    "SetVarRatingLinkLong",
+                    Set(
+                        varRatingLinkLong,
+                        varDialogResponse.responseData.rating
+                    ),
+                    "SetVarSlider",
+                    Set(
+                        varSlider,
+                        varDialogResponse.responseData.slider
+                    ),
+                    "SetVarSliderLink",
+                    Set(
+                        varSliderLink,
+                        varDialogResponse.responseData.slider
+                    ),
+                    "SetVarSliderLinkLong",
+                    Set(
+                        varSliderLinkLong,
+                        varDialogResponse.responseData.slider
+                    ),
+                    "SetVarPenInput",
+                    Set(
+                        VarPenInput,
+                        varDialogResponse.responseData.penInput
+                    ),
+                    "SetVarPenInputLink",
+                    Set(
+                        VarPenInputLink,
+                        varDialogResponse.responseData.penInput
+                    ),
+                    "SetVarPenInputLinkLong",
+                    Set(
+                        VarPenInputLinkLong,
+                        varDialogResponse.responseData.penInput
+                    ),
+                    "SetVarPenInputbase64",
+                    Set(
+                        VarPenInput,
+                        varDialogResponse.responseData.penInputBase64
+                    ),
+                    "SetVarPenInputLinkBase64",
+                    Set(
+                        VarPenInputLink,
+                        varDialogResponse.responseData.penInputBase64
+                    ),
+                    "SetVarPenInputLinkLongBase64",
+                    Set(
+                        VarPenInputLinkLong,
+                        varDialogResponse.responseData.penInputBase64   
+                    )
+                )
+            );
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  END: Actions (Modify as per ber business requirement)                                           //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  Send trace information of debug is enabled                                                      //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            /*--Dawid van Heerden-V0.14-2020/05/24: Ugly workaround to remove the image from the pen input from the response before sending it to the trace because images are not supported in trace*/
+            If(
+                varPopupDebugTrace,
+                Trace(
+                    "cmpPopup Response actioned",
+                    TraceSeverity.Information,
+                    First(
+                        DropColumns(
+                            Table(varDialogResponse.responseData),
+                            "penInput"
+                        )
+                    )
+                )
+            );
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  Remove the response that was received from the dialog and reset the component                   //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Remove(
+                colDialogResponses,
+                varDialogResponse
+            );
+            
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  This section can be ignore, but not deleted. It is required to set variables in the app         //
+            //  that the component might need.                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            If(
+                false,//This will obviously never set the variable and just sets the variable schema
+                Set(
+                    varPopupDebugTrace,
+                    false
+                )
+            )
+        PressedBorderColor: =ColorFade(tglDialogResponseTrigger_1.BorderColor, -15%)
+        Size: =12
+        TrueFill: =RGBA(100, 118, 132, 1)
+        TrueHoverFill: =ColorFade(tglDialogResponseTrigger_1.TrueFill, 15%)
+        TrueText: ="Running"
+        Width: =116
+        X: =625
+        Y: =lblToggleTrigger.Y
+        ZIndex: =13
+
+    lblHeaderDemoScreen As label:
+        Align: =Center
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =lblHeaderDemoScreen.BorderColor
+        FontWeight: =Semibold
+        Height: =lblHeaderWelcomeScreen.Height
+        HoverBorderColor: =lblHeaderDemoScreen.BorderColor
+        HoverColor: =lblHeaderDemoScreen.Color
+        HoverFill: =lblHeaderDemoScreen.Fill
+        PressedBorderColor: =lblHeaderDemoScreen.BorderColor
+        PressedColor: =lblHeaderDemoScreen.Color
+        PressedFill: =lblHeaderDemoScreen.Fill
+        Size: =16
+        Text: =lblHeaderWelcomeScreen.Text
+        Width: =lblHeaderWelcomeScreen.Width
+        X: =lblHeaderWelcomeScreen.X
+        Y: =lblHeaderWelcomeScreen.Y
+        ZIndex: =14
+
+    lblOk As label:
+        Align: =Left
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblOk.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblOk.BorderColor
+        HoverColor: =lblOk.Color
+        HoverFill: =lblOk.Fill
+        PressedBorderColor: =lblOk.BorderColor
+        PressedColor: =lblOk.Color
+        PressedFill: =lblOk.Fill
+        Size: =12
+        Text: ="Ok"
+        Width: =lblTypeConfirmation.Width
+        X: =lblTypeConfirmation.X + lblTypeConfirmation.Width
+        Y: =lblTypeConfirmation.Y
+        ZIndex: =15
+
+    lblToggleTrigger As label:
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblToggleTrigger.BorderColor
+        Font: =Font.'Segoe UI'
+        HoverBorderColor: =lblToggleTrigger.BorderColor
+        HoverColor: =lblToggleTrigger.Color
+        HoverFill: =lblToggleTrigger.Fill
+        PressedBorderColor: =lblToggleTrigger.BorderColor
+        PressedColor: =lblToggleTrigger.Color
+        PressedFill: =lblToggleTrigger.Fill
+        Size: =12
+        Text: ="Toggle that perform Actions==>"
+        Width: =260
+        X: =351
+        Y: =(Parent.Height - lblToggleTrigger.Height) * 97.5%
+        ZIndex: =16
+
+    lblReset As label:
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblReset.BorderColor
+        Font: =Font.'Segoe UI'
+        HoverBorderColor: =lblReset.BorderColor
+        HoverColor: =lblReset.Color
+        HoverFill: =lblReset.Fill
+        PressedBorderColor: =lblReset.BorderColor
+        PressedColor: =lblReset.Color
+        PressedFill: =lblReset.Fill
+        Size: =12
+        Text: ="Reset Popup if custom code breaks==>"
+        Width: =294
+        X: =835
+        Y: =lblToggleTrigger.Y
+        ZIndex: =17
+
+    btnInputRating As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "Rating",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configRating: { 
+                        default:2,
+                        tooltip:"Select a rating from one to 5",
+                        max: 5,
+                        showValue: true
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarRating",
+                    originalFunctionRequestID: Blank()
+                }
+            
+            )
+        PressedBorderColor: =btnInputRating.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Rating"
+        Tooltip: =lblRating.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblRating.X
+        Y: =lblButtonInput.Y
+        ZIndex: =18
+
+    btnInputSlider As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "Slider",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configSlider: {
+                        default:2,
+                        tooltip:"Select a rating from 1 to 10",
+                        min: 1,
+                        max: 10,
+                        showValue: true
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarSlider",
+                    originalFunctionRequestID: Blank()
+                }
+            
+            )
+        PressedBorderColor: =btnInputSlider.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Slider"
+        Tooltip: =lblSlider.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblSlider.X
+        Y: =lblButtonInput.Y
+        ZIndex: =19
+
+    btnInputRatingLink As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "Rating",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configRating: { 
+                        default:2,
+                        tooltip:"Select a rating from one to 5",
+                        max: 5,
+                        showValue: true
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    link: {
+                        label:"More Info",
+                        url: "https://aka.ms/powerapps-popup",
+                        tooltip: "Please check out more information about the modal dialog component"
+                    },
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarRatingLink",
+                    originalFunctionRequestID: Blank()
+                }
+            
+            )
+        PressedBorderColor: =btnInputRatingLink.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Rating L"
+        Tooltip: =lblRating.Text & " " & lblButtonWithLinkInput.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblRating.X
+        Y: =lblButtonWithLinkInput.Y
+        ZIndex: =20
+
+    btnInputSliderLink As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "Slider",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configSlider: {
+                        default:2,
+                        tooltip:"Select a rating from 1 to 10",
+                        min: 1,
+                        max: 10,
+                        showValue: true
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    link: {
+                        label:"More Info",
+                        url: "https://aka.ms/powerapps-popup",
+                        tooltip: "Please check out more information about the modal dialog component"
+                    },
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarSliderLink",
+                    originalFunctionRequestID: Blank()
+                }
+            
+            )
+        PressedBorderColor: =btnInputSliderLink.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Slider L"
+        Tooltip: =lblSlider.Text & " " & lblButtonWithLinkInput.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblSlider.X
+        Y: =lblButtonWithLinkInput.Y
+        ZIndex: =21
+
+    lblButtonConfirmation As label:
+        Align: =Left
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblButtonConfirmation.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonConfirmation.BorderColor
+        HoverColor: =lblButtonConfirmation.Color
+        HoverFill: =lblButtonConfirmation.Fill
+        PressedBorderColor: =lblButtonConfirmation.BorderColor
+        PressedColor: =lblButtonConfirmation.Color
+        PressedFill: =lblButtonConfirmation.Fill
+        Size: =12
+        Text: ="Button"
+        Width: =lblTypeConfirmation.Width
+        X: =Parent.Width * 5%
+        Y: =lblTypeConfirmation.Y + lblTypeConfirmation.Height
+        ZIndex: =22
+
+    lblButtonWithLinkConfirmation As label:
+        Align: =Left
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblButtonWithLinkConfirmation.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonWithLinkConfirmation.BorderColor
+        HoverColor: =lblButtonWithLinkConfirmation.Color
+        HoverFill: =lblButtonWithLinkConfirmation.Fill
+        PressedBorderColor: =lblButtonWithLinkConfirmation.BorderColor
+        PressedColor: =lblButtonWithLinkConfirmation.Color
+        PressedFill: =lblButtonWithLinkConfirmation.Fill
+        Size: =12
+        Text: ="With Link"
+        Width: =lblTypeConfirmation.Width
+        X: =Parent.Width * 5%
+        Y: =lblButtonConfirmation.Y + lblButtonConfirmation.Height * 2
+        ZIndex: =23
+
+    lblButtonWithLinkLongConfirmation As label:
+        Align: =Left
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblButtonWithLinkLongConfirmation.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonWithLinkLongConfirmation.BorderColor
+        HoverColor: =lblButtonWithLinkLongConfirmation.Color
+        HoverFill: =lblButtonWithLinkLongConfirmation.Fill
+        PressedBorderColor: =lblButtonWithLinkLongConfirmation.BorderColor
+        PressedColor: =lblButtonWithLinkLongConfirmation.Color
+        PressedFill: =lblButtonWithLinkLongConfirmation.Fill
+        Size: =12
+        Text: ="Long Text With Link"
+        Width: =lblTypeConfirmation.Width
+        X: =Parent.Width * 5%
+        Y: =lblButtonWithLinkConfirmation.Y + lblButtonWithLinkConfirmation.Height * 2
+        ZIndex: =24
+
+    lblYesNo As label:
+        Align: =Left
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblYesNo.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblYesNo.BorderColor
+        HoverColor: =lblYesNo.Color
+        HoverFill: =lblYesNo.Fill
+        PressedBorderColor: =lblYesNo.BorderColor
+        PressedColor: =lblYesNo.Color
+        PressedFill: =lblYesNo.Fill
+        Size: =12
+        Text: ="YesNo"
+        Width: =lblTypeConfirmation.Width
+        X: =lblOk.X + lblOk.Width
+        Y: =lblTypeConfirmation.Y
+        ZIndex: =25
+
+    lblTypeConfirmation As label:
+        Align: =Left
+        Color: =lblHeaderDemoScreen.Fill
+        FocusedBorderColor: =lblTypeConfirmation.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Bold
+        HoverBorderColor: =lblTypeConfirmation.BorderColor
+        HoverColor: =lblTypeConfirmation.Color
+        HoverFill: =lblTypeConfirmation.Fill
+        PressedBorderColor: =lblTypeConfirmation.BorderColor
+        PressedColor: =lblTypeConfirmation.Color
+        PressedFill: =lblTypeConfirmation.Fill
+        Size: =12
+        Text: ="Confirmation Types"
+        Width: =Parent.Width / 8
+        X: =Parent.Width * 5%
+        Y: =Parent.Height / 9
+        ZIndex: =26
+
+    lblYesNoCancel As label:
+        Align: =Left
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblYesNoCancel.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblYesNoCancel.BorderColor
+        HoverColor: =lblYesNoCancel.Color
+        HoverFill: =lblYesNoCancel.Fill
+        PressedBorderColor: =lblYesNoCancel.BorderColor
+        PressedColor: =lblYesNoCancel.Color
+        PressedFill: =lblYesNoCancel.Fill
+        Size: =12
+        Text: ="YesNoCancel"
+        Width: =lblTypeConfirmation.Width
+        X: =lblYesNo.X + lblYesNo.Width
+        Y: =lblTypeConfirmation.Y
+        ZIndex: =27
+
+    lblTextInput As label:
+        Align: =Left
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblTextInput.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblTextInput.BorderColor
+        HoverColor: =lblTextInput.Color
+        HoverFill: =lblTextInput.Fill
+        PressedBorderColor: =lblTextInput.BorderColor
+        PressedColor: =lblTextInput.Color
+        PressedFill: =lblTextInput.Fill
+        Size: =12
+        Text: ="TextInput"
+        Width: =lblTypeConfirmation.Width
+        X: =lblTypeInput.X + lblTypeInput.Width
+        Y: =lblTypeInput.Y
+        ZIndex: =28
+
+    lblTextArray As label:
+        Align: =Left
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblTextArray.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblTextArray.BorderColor
+        HoverColor: =lblTextArray.Color
+        HoverFill: =lblTextArray.Fill
+        PressedBorderColor: =lblTextArray.BorderColor
+        PressedColor: =lblTextArray.Color
+        PressedFill: =lblTextArray.Fill
+        Size: =12
+        Text: ="TextArray"
+        Width: =lblTypeConfirmation.Width
+        X: =lblTextInput.X + lblTextInput.Width
+        Y: =lblTypeInput.Y
+        ZIndex: =29
+
+    lblOffice365Users As label:
+        Align: =Left
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblOffice365Users.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblOffice365Users.BorderColor
+        HoverColor: =lblOffice365Users.Color
+        HoverFill: =lblOffice365Users.Fill
+        PressedBorderColor: =lblOffice365Users.BorderColor
+        PressedColor: =lblOffice365Users.Color
+        PressedFill: =lblOffice365Users.Fill
+        Size: =12
+        Text: ="Office365Users"
+        Width: =lblTypeConfirmation.Width
+        X: =lblTextArray.X + lblTextArray.Width
+        Y: =lblTypeInput.Y
+        ZIndex: =30
+
+    lblRating As label:
+        Align: =Left
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblRating.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblRating.BorderColor
+        HoverColor: =lblRating.Color
+        HoverFill: =lblRating.Fill
+        PressedBorderColor: =lblRating.BorderColor
+        PressedColor: =lblRating.Color
+        PressedFill: =lblRating.Fill
+        Size: =12
+        Text: ="Rating"
+        Width: =lblTypeConfirmation.Width
+        X: =lblOffice365Users.X + lblOffice365Users.Width
+        Y: =lblTypeInput.Y
+        ZIndex: =31
+
+    lblSlider As label:
+        Align: =Left
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblSlider.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblSlider.BorderColor
+        HoverColor: =lblSlider.Color
+        HoverFill: =lblSlider.Fill
+        PressedBorderColor: =lblSlider.BorderColor
+        PressedColor: =lblSlider.Color
+        PressedFill: =lblSlider.Fill
+        Size: =12
+        Text: ="Slider"
+        Width: =lblTypeConfirmation.Width
+        X: =lblRating.X + lblRating.Width
+        Y: =lblTypeInput.Y
+        ZIndex: =32
+
+    btnOkLinkLong As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Ok",
+                    message: "The quick brown fox jumps over the lazy dog. He then went on to buy a house, got married and had some kids. They always listened to their parents and soon there were then lots of foxes to jump over the lazy hounds. The cats loved this and cheered the foxes on every occassion.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    // -- Link Information (OPTIONAL) -- //
+                    link: {
+                        label: "More Info",
+                        url: "https://aka.ms/powerapps-popup",
+                        tooltip: "Please check out more information about the modal dialog component"
+                    },
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarOkLinkLong",
+                    originalFunctionRequestID: Blank()
+                }
+            )
+        PressedBorderColor: =btnOkLinkLong.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: |-
+            ="Ok LL
+            "
+        Tooltip: =lblOk.Text & " " & lblButtonWithLinkLongConfirmation.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblOk.X
+        Y: =lblButtonWithLinkLongConfirmation.Y
+        ZIndex: =33
+
+    btnTesNoLinkLong As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "YesNo",
+                    message: "The quick brown fox jumps over the lazy dog. He then went on to buy a house, got married and had some kids. They always listened to their parents and soon there were then lots of foxes to jump over the lazy hounds. The cats loved this and cheered the foxes on every occassion.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    // -- Link Information (OPTIONAL) -- //
+                    link: {
+                        label: "More Info",
+                        url: "https://aka.ms/powerapps-popup",
+                        tooltip: "Please check out more information about the modal dialog component"
+                    },
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarYesNoLinkLong",
+                    originalFunctionRequestID: Blank()
+                }
+            )
+        PressedBorderColor: =btnTesNoLinkLong.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="YesNo LL"
+        Tooltip: =lblYesNo.Text & " " & lblButtonWithLinkLongConfirmation.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblYesNo.X
+        Y: =lblButtonWithLinkLongConfirmation.Y
+        ZIndex: =34
+
+    btnYesNoCancelLinkLong As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "YesNoCancel",
+                    message: "The quick brown fox jumps over the lazy dog. He then went on to buy a house, got married and had some kids. They always listened to their parents and soon there were then lots of foxes to jump over the lazy hounds. The cats loved this and cheered the foxes on every occassion.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    // -- Link Information (OPTIONAL) -- //
+                    link: {
+                        label:"More Info",
+                        url: "https://aka.ms/powerapps-popup",
+                        tooltip: "Please check out more information about the modal dialog component"
+                    },
+            
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarYesNoCancelLinkLong",
+                    originalFunctionRequestID: Blank()
+                }
+            
+            )
+        PressedBorderColor: =btnYesNoCancelLinkLong.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="YesNoCancel LL"
+        Tooltip: =lblYesNoCancel.Text & " " & lblButtonWithLinkLongConfirmation.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblYesNoCancel.X
+        Y: =lblButtonWithLinkLongConfirmation.Y
+        ZIndex: =35
+
+    btnInputTextLinkLong As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "TextInput",
+                    message: "The quick brown fox jumps over the lazy dog. He then went on to buy a house, got married and had some kids. They always listened to their parents and soon there were then lots of foxes to jump over the lazy hounds. The cats loved this and cheered the foxes on every occassion.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configTextInput: {
+                        default: "Test",
+                        hintText: "We are looking for the fox's name",
+                        tooltip: "Please type the name of the fox"
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    link: {
+                        label: "More Info",
+                        url: "https://aka.ms/powerapps-popup",
+                        tooltip: "Please check out more information about the modal dialog component"
+                    },
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarTextInputLinkLong",
+                    originalFunctionRequestID: Blank()
+                }
+            )
+        PressedBorderColor: =btnInputTextLinkLong.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="InputText LL"
+        Tooltip: =lblTextInput.Text & " " & lblButtonWithLinkLongInput.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblTextInput.X
+        Y: =lblButtonWithLinkLongInput.Y
+        ZIndex: =36
+
+    btnTextArrayLinkLong As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "TextArray",
+                    message: "The quick brown fox jumps over the lazy dog. He then went on to buy a house, got married and had some kids. They always listened to their parents and soon there were then lots of foxes to jump over the lazy hounds. The cats loved this and cheered the foxes on every occassion.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configTextArray: {
+                        tooltip:"Please give us the name",
+                        arrayList: ["Donald","Mickey"],
+                        defaultValue: "Donald",
+                        allowMultipleSelect: false
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    link: {
+                        label:"More Info",
+                        url: "https://aka.ms/powerapps-popup",
+                        tooltip: "Please check out more information about the modal dialog component"
+                    },
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarTextArrayLinkLong",
+                    originalFunctionRequestID: Blank()
+                }
+            )
+        PressedBorderColor: =btnTextArrayLinkLong.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="InputArray LL"
+        Tooltip: =lblTextArray.Text & " " & lblButtonWithLinkLongInput.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblTextArray.X
+        Y: =lblButtonWithLinkLongInput.Y
+        ZIndex: =37
+
+    btnInputOffice365UsersLinkLong As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "Office365Users",
+                    message: "The quick brown fox jumps over the lazy dog. He then went on to buy a house, got married and had some kids. They always listened to their parents and soon there were then lots of foxes to jump over the lazy hounds. The cats loved this and cheered the foxes on every occassion.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configOffice365Users: {
+                        tooltip: "Please give us the name",
+                        allowMultipleSelect: false
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    link: {
+                        label: "More Info",
+                        url: "https://aka.ms/powerapps-popup",
+                        tooltip: "Please check out more information about the modal dialog component"
+                    },
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarOffice365UsersLinkLong",
+                    originalFunctionRequestID: Blank()
+                }
+            )
+        PressedBorderColor: =btnInputOffice365UsersLinkLong.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Input365 LL"
+        Tooltip: =lblOffice365Users.Text & " " & lblButtonWithLinkLongInput.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblOffice365Users.X
+        Y: =lblButtonWithLinkLongInput.Y
+        ZIndex: =38
+
+    btnInputRatingLinkLong As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "Rating",
+                    message: "The quick brown fox jumps over the lazy dog. He then went on to buy a house, got married and had some kids. They always listened to their parents and soon there were then lots of foxes to jump over the lazy hounds. The cats loved this and cheered the foxes on every occassion.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configRating: { 
+                        default:2,
+                        tooltip:"Select a rating from one to 5",
+                        max: 5,
+                        showValue: true
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    link: {
+                        label:"More Info",
+                        url: "https://aka.ms/powerapps-popup",
+                        tooltip: "Please check out more information about the modal dialog component"
+                    },
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarRatingLinkLong",
+                    originalFunctionRequestID: Blank()
+                }
+            
+            )
+        PressedBorderColor: =btnInputRatingLinkLong.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Rating LL"
+        Tooltip: =lblRating.Text & " " & lblButtonWithLinkLongInput.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblRating.X
+        Y: =lblButtonWithLinkLongInput.Y
+        ZIndex: =39
+
+    btnInputSliderLinkLong As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "Slider",
+                    message: "The quick brown fox jumps over the lazy dog. He then went on to buy a house, got married and had some kids. They always listened to their parents and soon there were then lots of foxes to jump over the lazy hounds. The cats loved this and cheered the foxes on every occassion.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configSlider: {
+                        default:2,
+                        tooltip:"Select a rating from 1 to 10",
+                        min: 1,
+                        max: 10,
+                        showValue: true
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    link: {
+                        label:"More Info",
+                        url: "https://aka.ms/powerapps-popup",
+                        tooltip: "Please check out more information about the modal dialog component"
+                    },
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarSliderLinkLong",
+                    originalFunctionRequestID: Blank()
+                }
+            
+            )
+        PressedBorderColor: =btnInputSliderLinkLong.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Slider LL"
+        Tooltip: =lblSlider.Text & " " & lblButtonWithLinkLongInput.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblSlider.X
+        Y: =lblButtonWithLinkLongInput.Y
+        ZIndex: =40
+
+    btnInputPen As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "PenInput",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configPenInput: {
+                        tooltip:"Give us your million dollar signature",
+                        size:1,
+                        showControls: true
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarPenInput",
+                    originalFunctionRequestID: Blank()
+                }
+            
+            )
+        PressedBorderColor: =btnInputPen.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="PenInput"
+        Tooltip: =lblPenInput.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblPenInput.X
+        Y: =lblButtonInput.Y
+        ZIndex: =41
+
+    btnInputPenLink As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "PenInput",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configPenInput: {
+                        tooltip:"Give us your million dollar signature",
+                        size:1,
+                        showControls: true
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarPenInputLink",
+                    originalFunctionRequestID: Blank()
+                }
+            
+            )
+        PressedBorderColor: =btnInputPenLink.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="PenInput L"
+        Tooltip: =lblPenInput.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblPenInput.X
+        Y: =lblButtonWithLinkInput.Y
+        ZIndex: =42
+
+    btnInputPenLinkLong As button:
+        BorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        BorderThickness: =1
+        Color: =White
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        FocusedBorderThickness: =1
+        Font: =Font.'Segoe UI'
+        Height: =lblTypeConfirmation.Height * 90%
+        HoverBorderColor: =ColorFade(lblHeaderWelcomeScreen.Fill,-15%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill, 15%)
+        OnSelect: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  For more information on how to structure the instruction to the popup as well as the response   //
+            //  that it will be sending back please refer to:                                                   //
+            //  https://aka.ms/powerapps-popup                                                                  //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "Input",
+                    inputType: "PenInput",
+                    message: "The quick brown fox jumps over the lazy dog.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    configPenInput: {
+                        tooltip:"Give us your million dollar signature",
+                        size:1,
+                        showControls: true
+                    },
+                    // -- Link Information (OPTIONAL) -- //
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+                    responseAction: "SetVarPenInputLinkLong",
+                    originalFunctionRequestID: Blank()
+                }
+            
+            )
+        PressedBorderColor: =btnInputPenLinkLong.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="PenInput L"
+        Tooltip: =lblPenInput.Text
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblPenInput.X
+        Y: =lblButtonWithLinkLongInput.Y
+        ZIndex: =43
+
+    lblButtonResultConfirmation As label:
+        Align: =Left
+        FocusedBorderColor: =lblButtonResultConfirmation.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultConfirmation.BorderColor
+        HoverColor: =lblButtonResultConfirmation.Color
+        HoverFill: =lblButtonResultConfirmation.Fill
+        PressedBorderColor: =lblButtonResultConfirmation.BorderColor
+        PressedColor: =lblButtonResultConfirmation.Color
+        PressedFill: =lblButtonResultConfirmation.Fill
+        Size: =12
+        Text: =""
+        Width: =lblTypeConfirmation.Width
+        X: =lblTypeConfirmation.X
+        Y: =lblButtonConfirmation.Y + lblButtonConfirmation.Height
+        ZIndex: =44
+
+    lblButtonWithLinkResultConfirmation As label:
+        Align: =Left
+        FocusedBorderColor: =lblButtonWithLinkResultConfirmation.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonWithLinkResultConfirmation.BorderColor
+        HoverColor: =lblButtonWithLinkResultConfirmation.Color
+        HoverFill: =lblButtonWithLinkResultConfirmation.Fill
+        PressedBorderColor: =lblButtonWithLinkResultConfirmation.BorderColor
+        PressedColor: =lblButtonWithLinkResultConfirmation.Color
+        PressedFill: =lblButtonWithLinkResultConfirmation.Fill
+        Size: =12
+        Text: =""
+        Width: =lblTypeConfirmation.Width
+        X: =lblTypeConfirmation.X
+        Y: =lblButtonWithLinkConfirmation.Y + lblButtonWithLinkConfirmation.Height
+        ZIndex: =45
+
+    lblButtonWithLinkLongResult As label:
+        Align: =Left
+        FocusedBorderColor: =lblButtonWithLinkLongResult.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonWithLinkLongResult.BorderColor
+        HoverColor: =lblButtonWithLinkLongResult.Color
+        HoverFill: =lblButtonWithLinkLongResult.Fill
+        PressedBorderColor: =lblButtonWithLinkLongResult.BorderColor
+        PressedColor: =lblButtonWithLinkLongResult.Color
+        PressedFill: =lblButtonWithLinkLongResult.Fill
+        Size: =12
+        Text: =""
+        Width: =lblTypeConfirmation.Width
+        X: =lblTypeConfirmation.X
+        Y: =lblButtonWithLinkLongConfirmation.Y + lblButtonWithLinkLongConfirmation.Height
+        ZIndex: =46
+
+    lblButtonInput As label:
+        Align: =Left
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblButtonInput.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeInput.Height
+        HoverBorderColor: =lblButtonInput.BorderColor
+        HoverColor: =lblButtonInput.Color
+        HoverFill: =lblButtonInput.Fill
+        PressedBorderColor: =lblButtonInput.BorderColor
+        PressedColor: =lblButtonInput.Color
+        PressedFill: =lblButtonInput.Fill
+        Size: =12
+        Text: ="Button"
+        Width: =lblTypeInput.Width
+        X: =Parent.Width * 5%
+        Y: =lblTypeInput.Y + lblTypeInput.Height
+        ZIndex: =47
+
+    lblButtonWithLinkInput As label:
+        Align: =Left
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblButtonWithLinkInput.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeInput.Height
+        HoverBorderColor: =lblButtonWithLinkInput.BorderColor
+        HoverColor: =lblButtonWithLinkInput.Color
+        HoverFill: =lblButtonWithLinkInput.Fill
+        PressedBorderColor: =lblButtonWithLinkInput.BorderColor
+        PressedColor: =lblButtonWithLinkInput.Color
+        PressedFill: =lblButtonWithLinkInput.Fill
+        Size: =12
+        Text: ="With Link"
+        Width: =lblTypeInput.Width
+        X: =Parent.Width * 5%
+        Y: =lblButtonInput.Y + lblButtonInput.Height * 2
+        ZIndex: =48
+
+    lblButtonWithLinkLongInput As label:
+        Align: =Left
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblButtonWithLinkLongInput.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeInput.Height
+        HoverBorderColor: =lblButtonWithLinkLongInput.BorderColor
+        HoverColor: =lblButtonWithLinkLongInput.Color
+        HoverFill: =lblButtonWithLinkLongInput.Fill
+        PressedBorderColor: =lblButtonWithLinkLongInput.BorderColor
+        PressedColor: =lblButtonWithLinkLongInput.Color
+        PressedFill: =lblButtonWithLinkLongInput.Fill
+        Size: =12
+        Text: ="Long Text With Link"
+        Width: =lblTypeInput.Width
+        X: =Parent.Width * 5%
+        Y: =lblButtonWithLinkInput.Y + lblButtonWithLinkInput.Height * 2
+        ZIndex: =49
+
+    lblTypeInput As label:
+        Align: =Left
+        Color: =lblHeaderDemoScreen.Fill
+        FocusedBorderColor: =lblTypeInput.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Bold
+        HoverBorderColor: =lblTypeInput.BorderColor
+        HoverColor: =lblTypeInput.Color
+        HoverFill: =lblTypeInput.Fill
+        PressedBorderColor: =lblTypeInput.BorderColor
+        PressedColor: =lblTypeInput.Color
+        PressedFill: =lblTypeInput.Fill
+        Size: =12
+        Text: ="Input Types"
+        Width: =Parent.Width / 8
+        X: =Parent.Width * 5%
+        Y: =lblButtonWithLinkLongResult.Y+ lblButtonWithLinkLongResult.Height * 2
+        ZIndex: =50
+
+    lblButtonResultInput As label:
+        Align: =Left
+        FocusedBorderColor: =lblButtonResultInput.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeInput.Height
+        HoverBorderColor: =lblButtonResultInput.BorderColor
+        HoverColor: =lblButtonResultInput.Color
+        HoverFill: =lblButtonResultInput.Fill
+        PressedBorderColor: =lblButtonResultInput.BorderColor
+        PressedColor: =lblButtonResultInput.Color
+        PressedFill: =lblButtonResultInput.Fill
+        Size: =12
+        Text: =""
+        Width: =lblTypeInput.Width
+        X: =lblTypeInput.X
+        Y: =lblButtonInput.Y + lblButtonInput.Height
+        ZIndex: =51
+
+    lblButtonWithLinkResultInput As label:
+        Align: =Left
+        FocusedBorderColor: =lblButtonWithLinkResultInput.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeInput.Height
+        HoverBorderColor: =lblButtonWithLinkResultInput.BorderColor
+        HoverColor: =lblButtonWithLinkResultInput.Color
+        HoverFill: =lblButtonWithLinkResultInput.Fill
+        PressedBorderColor: =lblButtonWithLinkResultInput.BorderColor
+        PressedColor: =lblButtonWithLinkResultInput.Color
+        PressedFill: =lblButtonWithLinkResultInput.Fill
+        Size: =12
+        Text: =""
+        Width: =lblTypeInput.Width
+        X: =lblTypeInput.X
+        Y: =lblButtonWithLinkInput.Y + lblButtonWithLinkInput.Height
+        ZIndex: =52
+
+    icoBack As icon.ChevronLeft:
+        Color: =White
+        DisabledFill: =icoBack.Fill
+        FocusedBorderColor: =icoBack.BorderColor
+        Height: =34
+        HoverBorderColor: =ColorFade(icoBack.BorderColor, 20%)
+        HoverColor: =ColorFade(icoBack.Color, 20%)
+        HoverFill: =icoBack.Fill
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate('Welcome Screen')
+        PressedBorderColor: =ColorFade(icoBack.BorderColor, -20%)
+        PressedColor: =ColorFade(icoBack.Color, -20%)
+        PressedFill: =icoBack.Fill
+        Width: =54
+        Y: =7
+        ZIndex: =53
+
+    htmlWelcomeDemo As htmlViewer:
+        Color: =RGBA(34, 34, 34, 1)
+        Height: =277
+        HoverBorderColor: =htmlWelcomeDemo.BorderColor
+        HtmlText: |-
+            ="<html><p>This is a list of all the possible popup combinations that the component can generate.&nbsp;</p>
+            <p>The top section contains all the information and confirmation prompts, while the bottom section demonstrates all the various input types.</p>
+            <p>The code of each button can be inspected to see what methods are being used for the popup instruction, and the response.</p></html>"
+        PaddingLeft: =Parent.Width * 5%
+        PaddingRight: =Parent.Width * 5%
+        PressedBorderColor: =htmlWelcomeDemo.BorderColor
+        Size: =13
+        Width: =615
+        X: =751
+        Y: =lblHeaderDemoScreen.Height
+        ZIndex: =54
+
+    lblButtonResultConfirmationOK As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultConfirmationOK.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultConfirmationOK.BorderColor
+        HoverColor: =lblButtonResultConfirmationOK.Color
+        HoverFill: =lblButtonResultConfirmationOK.Fill
+        PressedBorderColor: =lblButtonResultConfirmationOK.BorderColor
+        PressedColor: =lblButtonResultConfirmationOK.Color
+        PressedFill: =lblButtonResultConfirmationOK.Fill
+        Size: =8
+        Text: =varOk
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblOk.X
+        Y: =lblButtonResultConfirmation.Y
+        ZIndex: =55
+
+    lblButtonResultConfirmationYesNo As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultConfirmationYesNo.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultConfirmationYesNo.BorderColor
+        HoverColor: =lblButtonResultConfirmationYesNo.Color
+        HoverFill: =lblButtonResultConfirmationYesNo.Fill
+        PressedBorderColor: =lblButtonResultConfirmationYesNo.BorderColor
+        PressedColor: =lblButtonResultConfirmationYesNo.Color
+        PressedFill: =lblButtonResultConfirmationYesNo.Fill
+        Size: =8
+        Text: =varYesNo
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblYesNo.X
+        Y: =lblButtonResultConfirmation.Y
+        ZIndex: =56
+
+    lblButtonResultConfirmationYesNoCancel As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultConfirmationYesNoCancel.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultConfirmationYesNoCancel.BorderColor
+        HoverColor: =lblButtonResultConfirmationYesNoCancel.Color
+        HoverFill: =lblButtonResultConfirmationYesNoCancel.Fill
+        PressedBorderColor: =lblButtonResultConfirmationYesNoCancel.BorderColor
+        PressedColor: =lblButtonResultConfirmationYesNoCancel.Color
+        PressedFill: =lblButtonResultConfirmationYesNoCancel.Fill
+        Size: =8
+        Text: =varYesNoCancel
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblYesNoCancel.X
+        Y: =lblButtonResultConfirmation.Y
+        ZIndex: =57
+
+    lblButtonResultConfirmationOKWithLink As label:
+        Align: =Left
+        FocusedBorderColor: =lblButtonResultConfirmationOKWithLink.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultConfirmationOKWithLink.BorderColor
+        HoverColor: =lblButtonResultConfirmationOKWithLink.Color
+        HoverFill: =lblButtonResultConfirmationOKWithLink.Fill
+        PressedBorderColor: =lblButtonResultConfirmationOKWithLink.BorderColor
+        PressedColor: =lblButtonResultConfirmationOKWithLink.Color
+        PressedFill: =lblButtonResultConfirmationOKWithLink.Fill
+        Size: =12
+        Text: =""
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblButtonResultConfirmation.X + lblButtonResultConfirmation.Width
+        Y: =lblButtonWithLinkResultConfirmation.Y
+        ZIndex: =58
+
+    lblButtonResultConfirmationYesNoWithLink As label:
+        Align: =Left
+        FocusedBorderColor: =lblButtonResultConfirmationYesNoWithLink.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultConfirmationYesNoWithLink.BorderColor
+        HoverColor: =lblButtonResultConfirmationYesNoWithLink.Color
+        HoverFill: =lblButtonResultConfirmationYesNoWithLink.Fill
+        PressedBorderColor: =lblButtonResultConfirmationYesNoWithLink.BorderColor
+        PressedColor: =lblButtonResultConfirmationYesNoWithLink.Color
+        PressedFill: =lblButtonResultConfirmationYesNoWithLink.Fill
+        Size: =12
+        Text: =""
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =btnYesNo.X
+        Y: =lblButtonWithLinkResultConfirmation.Y
+        ZIndex: =59
+
+    lblButtonResultConfirmationYesNoCancelWithLink As label:
+        Align: =Left
+        FocusedBorderColor: =lblButtonResultConfirmationYesNoCancelWithLink.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultConfirmationYesNoCancelWithLink.BorderColor
+        HoverColor: =lblButtonResultConfirmationYesNoCancelWithLink.Color
+        HoverFill: =lblButtonResultConfirmationYesNoCancelWithLink.Fill
+        PressedBorderColor: =lblButtonResultConfirmationYesNoCancelWithLink.BorderColor
+        PressedColor: =lblButtonResultConfirmationYesNoCancelWithLink.Color
+        PressedFill: =lblButtonResultConfirmationYesNoCancelWithLink.Fill
+        Size: =12
+        Text: =""
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =btnYesNoCancel.X
+        Y: =lblButtonWithLinkResultConfirmation.Y
+        ZIndex: =60
+
+    lblButtonResultConfirmationOKLink As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultConfirmationOKLink.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultConfirmationOKLink.BorderColor
+        HoverColor: =lblButtonResultConfirmationOKLink.Color
+        HoverFill: =lblButtonResultConfirmationOKLink.Fill
+        PressedBorderColor: =lblButtonResultConfirmationOKLink.BorderColor
+        PressedColor: =lblButtonResultConfirmationOKLink.Color
+        PressedFill: =lblButtonResultConfirmationOKLink.Fill
+        Size: =8
+        Text: =varOkLink
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblOk.X
+        Y: =lblButtonWithLinkResultConfirmation.Y
+        ZIndex: =61
+
+    lblButtonResultConfirmationYesNoLink As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultConfirmationYesNoLink.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultConfirmationYesNoLink.BorderColor
+        HoverColor: =lblButtonResultConfirmationYesNoLink.Color
+        HoverFill: =lblButtonResultConfirmationYesNoLink.Fill
+        PressedBorderColor: =lblButtonResultConfirmationYesNoLink.BorderColor
+        PressedColor: =lblButtonResultConfirmationYesNoLink.Color
+        PressedFill: =lblButtonResultConfirmationYesNoLink.Fill
+        Size: =8
+        Text: =varYesNoLink
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblYesNo.X
+        Y: =lblButtonWithLinkResultConfirmation.Y
+        ZIndex: =62
+
+    lblButtonResultConfirmationYesNoCancelLink As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultConfirmationYesNoCancelLink.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultConfirmationYesNoCancelLink.BorderColor
+        HoverColor: =lblButtonResultConfirmationYesNoCancelLink.Color
+        HoverFill: =lblButtonResultConfirmationYesNoCancelLink.Fill
+        PressedBorderColor: =lblButtonResultConfirmationYesNoCancelLink.BorderColor
+        PressedColor: =lblButtonResultConfirmationYesNoCancelLink.Color
+        PressedFill: =lblButtonResultConfirmationYesNoCancelLink.Fill
+        Size: =8
+        Text: =varYesNoCancelLink
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblYesNoCancel.X
+        Y: =lblButtonWithLinkResultConfirmation.Y
+        ZIndex: =63
+
+    lblButtonResultConfirmationOKLinkLong As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultConfirmationOKLinkLong.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultConfirmationOKLinkLong.BorderColor
+        HoverColor: =lblButtonResultConfirmationOKLinkLong.Color
+        HoverFill: =lblButtonResultConfirmationOKLinkLong.Fill
+        PressedBorderColor: =lblButtonResultConfirmationOKLinkLong.BorderColor
+        PressedColor: =lblButtonResultConfirmationOKLinkLong.Color
+        PressedFill: =lblButtonResultConfirmationOKLinkLong.Fill
+        Size: =8
+        Text: =varOkLinkLong
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblOk.X
+        Y: =lblButtonWithLinkLongResult.Y
+        ZIndex: =64
+
+    lblButtonResultConfirmationYesNoLinkLong As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultConfirmationYesNoLinkLong.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultConfirmationYesNoLinkLong.BorderColor
+        HoverColor: =lblButtonResultConfirmationYesNoLinkLong.Color
+        HoverFill: =lblButtonResultConfirmationYesNoLinkLong.Fill
+        PressedBorderColor: =lblButtonResultConfirmationYesNoLinkLong.BorderColor
+        PressedColor: =lblButtonResultConfirmationYesNoLinkLong.Color
+        PressedFill: =lblButtonResultConfirmationYesNoLinkLong.Fill
+        Size: =8
+        Text: =varYesNoLinkLong
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblYesNo.X
+        Y: =lblButtonWithLinkLongResult.Y
+        ZIndex: =65
+
+    lblButtonResultConfirmationYesNoCancelLinkLong As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultConfirmationYesNoCancelLinkLong.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultConfirmationYesNoCancelLinkLong.BorderColor
+        HoverColor: =lblButtonResultConfirmationYesNoCancelLinkLong.Color
+        HoverFill: =lblButtonResultConfirmationYesNoCancelLinkLong.Fill
+        PressedBorderColor: =lblButtonResultConfirmationYesNoCancelLinkLong.BorderColor
+        PressedColor: =lblButtonResultConfirmationYesNoCancelLinkLong.Color
+        PressedFill: =lblButtonResultConfirmationYesNoCancelLinkLong.Fill
+        Size: =8
+        Text: =varYesNoCancelLinkLong
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblYesNoCancel.X
+        Y: =lblButtonWithLinkLongResult.Y
+        ZIndex: =66
+
+    lblButtonResultInputText As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultInputText.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultInputText.BorderColor
+        HoverColor: =lblButtonResultInputText.Color
+        HoverFill: =lblButtonResultInputText.Fill
+        PressedBorderColor: =lblButtonResultInputText.BorderColor
+        PressedColor: =lblButtonResultInputText.Color
+        PressedFill: =lblButtonResultInputText.Fill
+        Size: =8
+        Text: =varTextInput
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblTextInput.X
+        Y: =lblButtonResultInput.Y
+        ZIndex: =67
+
+    lblButtonResultInputTextArray As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultInputTextArray.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultInputTextArray.BorderColor
+        HoverColor: =lblButtonResultInputTextArray.Color
+        HoverFill: =lblButtonResultInputTextArray.Fill
+        PressedBorderColor: =lblButtonResultInputTextArray.BorderColor
+        PressedColor: =lblButtonResultInputTextArray.Color
+        PressedFill: =lblButtonResultInputTextArray.Fill
+        Size: =8
+        Text: =Concat(varTextArray,Value,",")
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblTextArray.X
+        Y: =lblButtonResultInput.Y
+        ZIndex: =68
+
+    lblButtonResultInputOffice365Users As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultInputOffice365Users.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultInputOffice365Users.BorderColor
+        HoverColor: =lblButtonResultInputOffice365Users.Color
+        HoverFill: =lblButtonResultInputOffice365Users.Fill
+        PressedBorderColor: =lblButtonResultInputOffice365Users.BorderColor
+        PressedColor: =lblButtonResultInputOffice365Users.Color
+        PressedFill: =lblButtonResultInputOffice365Users.Fill
+        Size: =8
+        Text: =Concat(varOffice365Users,Mail, ",")
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblOffice365Users.X
+        Y: =lblButtonResultInput.Y
+        ZIndex: =69
+
+    lblButtonResultInputRating As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultInputRating.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultInputRating.BorderColor
+        HoverColor: =lblButtonResultInputRating.Color
+        HoverFill: =lblButtonResultInputRating.Fill
+        PressedBorderColor: =lblButtonResultInputRating.BorderColor
+        PressedColor: =lblButtonResultInputRating.Color
+        PressedFill: =lblButtonResultInputRating.Fill
+        Size: =8
+        Text: =varRating
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblRating.X
+        Y: =lblButtonResultInput.Y
+        ZIndex: =70
+
+    lblButtonResultInputSlider As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultInputSlider.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultInputSlider.BorderColor
+        HoverColor: =lblButtonResultInputSlider.Color
+        HoverFill: =lblButtonResultInputSlider.Fill
+        PressedBorderColor: =lblButtonResultInputSlider.BorderColor
+        PressedColor: =lblButtonResultInputSlider.Color
+        PressedFill: =lblButtonResultInputSlider.Fill
+        Size: =8
+        Text: =varSlider
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblSlider.X
+        Y: =lblButtonResultInput.Y
+        ZIndex: =71
+
+    lblButtonResultInputTextLink As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultInputTextLink.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultInputTextLink.BorderColor
+        HoverColor: =lblButtonResultInputTextLink.Color
+        HoverFill: =lblButtonResultInputTextLink.Fill
+        PressedBorderColor: =lblButtonResultInputTextLink.BorderColor
+        PressedColor: =lblButtonResultInputTextLink.Color
+        PressedFill: =lblButtonResultInputTextLink.Fill
+        Size: =8
+        Text: =varTextInputLink
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblTextInput.X
+        Y: =lblButtonWithLinkResultInput.Y
+        ZIndex: =72
+
+    lblButtonResultInputTextArrayLink As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultInputTextArrayLink.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultInputTextArrayLink.BorderColor
+        HoverColor: =lblButtonResultInputTextArrayLink.Color
+        HoverFill: =lblButtonResultInputTextArrayLink.Fill
+        PressedBorderColor: =lblButtonResultInputTextArrayLink.BorderColor
+        PressedColor: =lblButtonResultInputTextArrayLink.Color
+        PressedFill: =lblButtonResultInputTextArrayLink.Fill
+        Size: =8
+        Text: =Concat(varTextArrayLink,Value,",")
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblTextArray.X
+        Y: =lblButtonWithLinkResultInput.Y
+        ZIndex: =73
+
+    lblButtonResultInputOffice365UsersLink As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultInputOffice365UsersLink.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultInputOffice365UsersLink.BorderColor
+        HoverColor: =lblButtonResultInputOffice365UsersLink.Color
+        HoverFill: =lblButtonResultInputOffice365UsersLink.Fill
+        PressedBorderColor: =lblButtonResultInputOffice365UsersLink.BorderColor
+        PressedColor: =lblButtonResultInputOffice365UsersLink.Color
+        PressedFill: =lblButtonResultInputOffice365UsersLink.Fill
+        Size: =8
+        Text: =Concat(varOffice365UsersLink,Mail, ",")
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblOffice365Users.X
+        Y: =lblButtonWithLinkResultInput.Y
+        ZIndex: =74
+
+    lblButtonResultInputRatingLink As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultInputRatingLink.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultInputRatingLink.BorderColor
+        HoverColor: =lblButtonResultInputRatingLink.Color
+        HoverFill: =lblButtonResultInputRatingLink.Fill
+        PressedBorderColor: =lblButtonResultInputRatingLink.BorderColor
+        PressedColor: =lblButtonResultInputRatingLink.Color
+        PressedFill: =lblButtonResultInputRatingLink.Fill
+        Size: =8
+        Text: =varRatingLink
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblRating.X
+        Y: =lblButtonWithLinkResultInput.Y
+        ZIndex: =75
+
+    lblButtonResultInputSliderLink As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultInputSliderLink.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultInputSliderLink.BorderColor
+        HoverColor: =lblButtonResultInputSliderLink.Color
+        HoverFill: =lblButtonResultInputSliderLink.Fill
+        PressedBorderColor: =lblButtonResultInputSliderLink.BorderColor
+        PressedColor: =lblButtonResultInputSliderLink.Color
+        PressedFill: =lblButtonResultInputSliderLink.Fill
+        Size: =8
+        Text: =varSliderLink
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblSlider.X
+        Y: =lblButtonWithLinkResultInput.Y
+        ZIndex: =76
+
+    lblButtonResultInputTextLinkLong As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultInputTextLinkLong.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultInputTextLinkLong.BorderColor
+        HoverColor: =lblButtonResultInputTextLinkLong.Color
+        HoverFill: =lblButtonResultInputTextLinkLong.Fill
+        PressedBorderColor: =lblButtonResultInputTextLinkLong.BorderColor
+        PressedColor: =lblButtonResultInputTextLinkLong.Color
+        PressedFill: =lblButtonResultInputTextLinkLong.Fill
+        Size: =8
+        Text: =varTextInputLinkLong
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblTextInput.X
+        Y: =lblButtonWithLinkLongResultInput.Y
+        ZIndex: =77
+
+    lblButtonResultInputTextArrayLinkLong As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultInputTextArrayLinkLong.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultInputTextArrayLinkLong.BorderColor
+        HoverColor: =lblButtonResultInputTextArrayLinkLong.Color
+        HoverFill: =lblButtonResultInputTextArrayLinkLong.Fill
+        PressedBorderColor: =lblButtonResultInputTextArrayLinkLong.BorderColor
+        PressedColor: =lblButtonResultInputTextArrayLinkLong.Color
+        PressedFill: =lblButtonResultInputTextArrayLinkLong.Fill
+        Size: =8
+        Text: =Concat(varTextArrayLinkLong,Value,",")
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblTextArray.X
+        Y: =lblButtonWithLinkLongResultInput.Y
+        ZIndex: =78
+
+    lblButtonResultInputOffice365UsersLinklong As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultInputOffice365UsersLinklong.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultInputOffice365UsersLinklong.BorderColor
+        HoverColor: =lblButtonResultInputOffice365UsersLinklong.Color
+        HoverFill: =lblButtonResultInputOffice365UsersLinklong.Fill
+        PressedBorderColor: =lblButtonResultInputOffice365UsersLinklong.BorderColor
+        PressedColor: =lblButtonResultInputOffice365UsersLinklong.Color
+        PressedFill: =lblButtonResultInputOffice365UsersLinklong.Fill
+        Size: =8
+        Text: =Concat(varOffice365UsersLinkLong,Mail, ",")
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblOffice365Users.X
+        Y: =lblButtonWithLinkLongResultInput.Y
+        ZIndex: =79
+
+    lblButtonResultInputRatingLinkLong As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultInputRatingLinkLong.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultInputRatingLinkLong.BorderColor
+        HoverColor: =lblButtonResultInputRatingLinkLong.Color
+        HoverFill: =lblButtonResultInputRatingLinkLong.Fill
+        PressedBorderColor: =lblButtonResultInputRatingLinkLong.BorderColor
+        PressedColor: =lblButtonResultInputRatingLinkLong.Color
+        PressedFill: =lblButtonResultInputRatingLinkLong.Fill
+        Size: =8
+        Text: =varRatingLinkLong
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblRating.X
+        Y: =lblButtonWithLinkLongResultInput.Y
+        ZIndex: =80
+
+    lblButtonResultInputSliderLinklong As label:
+        Align: =Left
+        Color: =RGBA(99, 139, 44, 1)
+        FocusedBorderColor: =lblButtonResultInputSliderLinklong.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblButtonResultInputSliderLinklong.BorderColor
+        HoverColor: =lblButtonResultInputSliderLinklong.Color
+        HoverFill: =lblButtonResultInputSliderLinklong.Fill
+        PressedBorderColor: =lblButtonResultInputSliderLinklong.BorderColor
+        PressedColor: =lblButtonResultInputSliderLinklong.Color
+        PressedFill: =lblButtonResultInputSliderLinklong.Fill
+        Size: =8
+        Text: =varSliderLinkLong
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblSlider.X
+        Y: =lblButtonWithLinkLongResultInput.Y
+        ZIndex: =81
+
+    lblButtonWithLinkLongResultInput As label:
+        Align: =Left
+        FocusedBorderColor: =lblButtonWithLinkLongResultInput.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeInput.Height
+        HoverBorderColor: =lblButtonWithLinkLongResultInput.BorderColor
+        HoverColor: =lblButtonWithLinkLongResultInput.Color
+        HoverFill: =lblButtonWithLinkLongResultInput.Fill
+        PressedBorderColor: =lblButtonWithLinkLongResultInput.BorderColor
+        PressedColor: =lblButtonWithLinkLongResultInput.Color
+        PressedFill: =lblButtonWithLinkLongResultInput.Fill
+        Size: =12
+        Text: =""
+        Width: =lblTypeInput.Width
+        X: =lblTypeInput.X
+        Y: =lblButtonWithLinkLongInput.Y + lblButtonWithLinkLongInput.Height
+        ZIndex: =82
+
+    lblButtonResultInputPenInput As image:
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =ColorFade(lblButtonResultInputPenInput.BorderColor, 20%)
+        HoverFill: =ColorFade(lblButtonResultInputPenInput.Fill, 20%)
+        Image: =VarPenInput
+        PressedBorderColor: =ColorFade(lblButtonResultInputPenInput.BorderColor, -20%)
+        PressedFill: =ColorFade(lblButtonResultInputPenInput.Fill, -20%)
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblPenInput.X
+        Y: =lblButtonResultInput.Y
+        ZIndex: =83
+
+    lblButtonResultInputPenInputLink As image:
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =ColorFade(lblButtonResultInputPenInputLink.BorderColor, 20%)
+        HoverFill: =ColorFade(lblButtonResultInputPenInputLink.Fill, 20%)
+        Image: =VarPenInputLink
+        PressedBorderColor: =ColorFade(lblButtonResultInputPenInputLink.BorderColor, -20%)
+        PressedFill: =ColorFade(lblButtonResultInputPenInputLink.Fill, -20%)
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblPenInput.X
+        Y: =lblButtonWithLinkResultInput.Y
+        ZIndex: =84
+
+    lblButtonResultInputPenInputLinkLong As image:
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =ColorFade(lblButtonResultInputPenInputLinkLong.BorderColor, 20%)
+        HoverFill: =ColorFade(lblButtonResultInputPenInputLinkLong.Fill, 20%)
+        Image: =VarPenInputLinkLong
+        PressedBorderColor: =ColorFade(lblButtonResultInputPenInputLinkLong.BorderColor, -20%)
+        PressedFill: =ColorFade(lblButtonResultInputPenInputLinkLong.Fill, -20%)
+        Width: =lblTypeConfirmation.Width * 90%
+        X: =lblPenInput.X
+        Y: =lblButtonWithLinkLongResultInput.Y
+        ZIndex: =85
+
+    cmpModalDialog_1 As cmpModalDialog:
+        Theme: |-
+            =//////////////////////////////////////////////////////////////////////
+            //                                                                  //
+            //  NB! Please only use RGBA colors for this theming section,       //
+            //      as using color names or Hex values will most likely break   //
+            //      the app. We are busy talking to Microsoft about this as     //
+            //      we suspect there is a problem with the way the colors       //
+            //      are evaluated in dynamically created properties.            //
+            //                                                                  //
+            //      If you are looking for an easy way to convert color names   //
+            //      to RGBA, please use https://htmlcolorcodes.com/color-names  //
+            //                                                                  //
+            //////////////////////////////////////////////////////////////////////
+            
+            {
+                modalBackground: RGBA(255, 255, 255, 1),        //Color for the background of the modal dialog
+                primaryColor: RGBA(116, 39, 116, 1),            //Color for the main controls
+                buttonOkFill: RGBA(154, 205, 50, 1),            //Color of the 'Ok' button
+                buttonOkFontColor: RGBA(255, 255, 255, 1),      //Color of the 'Ok' button font
+                buttonYesFill: RGBA(154, 205, 50, 1),              //Color of the 'Yes' button
+                buttonYesFontColor: RGBA(255, 255, 255, 1),  //Color of the 'Yes' button font
+                buttonNoFill: RGBA(255, 69, 0, 1),              //Color of the 'No' button
+                buttonNoFontColor: RGBA(255, 255, 255, 1),      //Color of the 'Yes' button font
+                buttonCancelFill: RGBA(128, 128, 128, 1),       //Color of the 'Cancel' button
+                buttonCancelFontColor: RGBA(255, 255, 255, 1),  //Color of the 'Yes' button font
+                fontType: 'Segoe UI',                           //Type of font to be used in messages and buttons
+                fontColor: RGBA(60,60,60,1),                    //Font color
+                fontSize: 13                                    //Base size for fonts. The message will be 10% larger for focus
+            }
+        Visible: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  The dialog should only be visable if one of these three collections is not exmpty. If you are   //
+            //  not familar with the colFunctionQueue pattern yet, this will be introduced later, but please    //
+            //  also include this in the visible property of the component                                      //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            
+            !IsEmpty(colDialogInstructions) || !IsEmpty(colDialogResponses) || !IsBlank(Last(Filter(colFunctionQueue,functionActive)).action)
+        ZIndex: =86
+
+    btnResetAllFunctions As button:
+        BorderColor: =ColorFade(btnResetAllFunctions.Fill, -15%)
+        Fill: =RGBA(100, 118, 132, 1)
+        FocusedBorderColor: =btnResetAllFunctions.BorderColor
+        Font: =Font.'Segoe UI'
+        Height: =lblToggleTrigger.Height
+        HoverBorderColor: =ColorFade(btnResetAllFunctions.BorderColor, 20%)
+        HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        OnSelect: |-
+            =Clear(colFunctionQueue);
+            Clear(colDialogInstructions);
+            Clear(colDialogResponses)
+        PressedBorderColor: =btnResetAllFunctions.Fill
+        PressedColor: =btnResetAllFunctions.Fill
+        PressedFill: =btnResetAllFunctions.Color
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Reset All"
+        X: =1129
+        Y: =lblToggleTrigger.Y
+        ZIndex: =87
+
+    lblPenInput As label:
+        Align: =Left
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblPenInput.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =Semibold
+        Height: =lblTypeConfirmation.Height
+        HoverBorderColor: =lblPenInput.BorderColor
+        HoverColor: =lblPenInput.Color
+        HoverFill: =lblPenInput.Fill
+        PressedBorderColor: =lblPenInput.BorderColor
+        PressedColor: =lblPenInput.Color
+        PressedFill: =lblPenInput.Fill
+        Size: =12
+        Text: ="PenInput"
+        Width: =lblTypeConfirmation.Width
+        X: =lblSlider.X + lblSlider.Width
+        Y: =lblTypeInput.Y
+        ZIndex: =88
+

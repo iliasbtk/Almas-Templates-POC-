@@ -1,0 +1,631 @@
+ccInput As screen:
+    LoadingSpinnerColor: =RGBA(73, 130, 5, 1)
+    OnVisible: |-
+        =UpdateContext({varCCBulkDelete: true});
+
+    "galCostCentreInput As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+        BorderColor: =RGBA(166, 166, 166, 1)
+        BorderStyle: =Solid
+        Fill: =RGBA(255,255,255,1)
+        Height: =459
+        Items: |
+            ='Cost Centres'
+        Layout: =Layout.Vertical
+        OnSelect: =
+        TemplateFill: |
+            =If(ThisItem.IsSelected,RGBA(0, 0, 0, 5%),White)
+        TemplatePadding: =0
+        TemplateSize: =31
+        Width: =1026
+        X: =152
+        Y: =120
+        ZIndex: =1
+
+        btDelCC As icon.Trash:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Color: =RGBA(73, 130, 5, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =25
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Trash
+            OnSelect: |-
+                =UpdateContext({varCCDelete:true})
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Tooltip: ="Delete Record"
+            Visible: |
+                =If(varCCBulkDelete,true,false)
+            Width: =25
+            X: =990
+            Y: =1
+            ZIndex: =1
+
+        btCancelCC As icon.Save:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Color: =RGBA(73, 130, 5, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =25
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.CancelBadge
+            OnSelect: |-
+                =Reset([@txtCCCode]);
+                Reset([@txtCCName]);
+                Set(varEditRecord,GUID());
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Tooltip: ="Cancel"
+            Visible: =If(And(ThisItem.'Cost Centre' = varEditRecord,varCCBulkDelete),true,false)
+            Width: =25
+            X: =915
+            Y: =1
+            ZIndex: =3
+
+        btSaveCC As icon.Save:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Color: =RGBA(73, 130, 5, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            DisplayMode: =If(IsBlankOrError(txtCCName)||IsBlankOrError(txtCCCode),Disabled,Edit)
+            FocusedBorderThickness: =4
+            Height: =25
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Save
+            OnSelect: |
+                =//Notify(Validate('Business Units',"name",txtSectorName.Text),NotificationType.Error);
+                Patch(
+                    'Cost Centres',
+                    galCostCentreInput.Selected,
+                    {Name: Trim(txtCCName.Text),
+                    'Cost Centre code':Trim(txtCCCode.Text),
+                    //'Business Unit':LookUp(BusinessUnits_1,Name=ddCCBusinessUnit.Selected.Name),
+                    'Business Unit':LookUp(BusinessUnits_1,Name=First(cmbCCBU.SelectedItems).Name)}
+                );
+                If(IsEmpty(Errors('Cost Centres')),
+                    Set(varEditRecord,GUID());,
+                    Notify("Can't save the record! Error: " & First(Errors('Cost Centres')).Message & If(First(Errors('Cost Centres')).Error = 6,".Trying to create duplicate record",""),NotificationType.Error ,5000)    
+                );
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Tooltip: ="Save"
+            Visible: =If(And(ThisItem.'Cost Centre' = varEditRecord,varCCBulkDelete),true,false)
+            Width: =25
+            X: =952
+            Y: =1
+            ZIndex: =4
+
+        btEditCC As icon.Edit:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Color: =RGBA(73, 130, 5, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =25
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Edit
+            OnSelect: =Set(varEditRecord,ThisItem.'Cost Centre')
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Tooltip: ="Edit the Cost Centre Record"
+            Visible: |
+                =If(Not(varEditRecord = ThisItem.'Cost Centre') && varCCBulkDelete,true,false)
+                
+            Width: =25
+            X: =915
+            Y: =1
+            ZIndex: =5
+
+        ckbCCBulkDelete As checkbox:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            CheckboxBorderColor: =RGBA(73, 130, 5, 1)
+            CheckboxSize: =25
+            CheckmarkFill: =RGBA(73, 130, 5, 1)
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =30
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(51, 51, 51, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            OnCheck: =Collect(colCCDeleteItems,ThisItem.'Cost Centre')
+            OnSelect: =Select(Parent)
+            OnUncheck: =RemoveIf(colCCDeleteItems,Value=ThisItem.'Cost Centre')
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(51, 51, 51, 1)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Reset: =varCCBulkDelete
+            Size: =13
+            Text: =
+            Visible: =If(Not(varEditRecord = ThisItem.'Cost Centre') && Not(varCCBulkDelete),true,false)
+            X: =990
+            ZIndex: =7
+
+        grpCCInput As group:
+            Height: =5
+            Width: =5
+            X: =60
+            Y: =31
+            ZIndex: =16
+
+            txtCCCode As text:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(51, 51, 51, 1)
+                Default: =ThisItem.'Cost Centre code'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =
+                Fill: =If(varEditRecord=ThisItem.'Cost Centre',RGBA(253,222,207,1),RGBA(255,255,255,0))
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                Height: =31
+                HintText: ="Try this"
+                HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                OnChange: =
+                OnSelect: =Select(Parent)
+                PressedBorderColor: =RGBA(73, 130, 5, 1)
+                PressedColor: =RGBA(51, 51, 51, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =12
+                Tooltip: ="Add the Sector Name"
+                Width: =128
+                ZIndex: =2
+
+            txtCCName As text:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderThickness: =2
+                Color: =RGBA(51, 51, 51, 1)
+                Default: =ThisItem.Name
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =If(ThisItem.'Cost Centre' = varEditRecord,DisplayMode.Edit,DisplayMode.View)
+                Fill: =If(varEditRecord=ThisItem.'Cost Centre',RGBA(253,222,207,1),RGBA(255,255,255,0))
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                Height: =31
+                HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                OnSelect: =Select(Parent)
+                PressedBorderColor: =RGBA(73, 130, 5, 1)
+                PressedColor: =RGBA(51, 51, 51, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =13
+                Width: =377
+                X: =128
+                ZIndex: =6
+
+            cmbCCBU As combobox:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                ChevronFill: =RGBA(33, 33, 33, 1)
+                ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                Color: =RGBA(51, 51, 51, 1)
+                DefaultSelectedItems: =LookUp(BusinessUnits,Name=ThisItem.'Business Unit'.Name)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["new_name"]
+                DisplayMode: =If(ThisItem.'Cost Centre' = varEditRecord,DisplayMode.Edit,DisplayMode.View)
+                Fill: =If(varEditRecord=ThisItem.'Cost Centre',RGBA(253,222,207,1),RGBA(255,255,255,0))
+                Font: =Font.'Segoe UI'
+                Height: =31
+                HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(212, 212, 212, 1)
+                InputTextPlaceholder: =
+                IsSearchable: =false
+                Items: =BusinessUnits.Name
+                OnChange: =
+                OnSelect: =Select(Parent)
+                PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(73, 130, 5, 1)
+                SearchFields: =["new_name"]
+                SearchItems: =[]
+                SelectionFill: =RGBA(73, 130, 5, 1)
+                SelectMultiple: =false
+                Size: =13
+                X: =505
+                ZIndex: =9
+
+    cmpHeaderCC As cmpHeader:
+        HeadingIcon: ='Almas Image'
+        HeadingText: ="Cost Centre Input Screen"
+        ZIndex: =2
+
+    cmpSideNavCC As cmpSideNav:
+        CompletedFill: =varSideBarColours.CompletedFill
+        CurrentIndicatorFade: =varSideBarColours.CurrentIndicatorFade
+        Default: ="""Cost Centre"""
+        HoverFill: =varSideBarColours.Hoverfill
+        Items: =varSidebarMenu
+        NotCompletedFill: =varSideBarColours.NotcompletedFill
+        TextColor: =varSideBarColours.TextColor
+        ZIndex: =3
+
+    btAddCC As icon.Add:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(73, 130, 5, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =25
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Add
+        OnSelect: |
+            =UpdateContext({varCCNameDuplicate:LookUp('Cost Centres',Name="Add the Cost Centre Record").Name}); //Search for duplicate CC Names
+            UpdateContext({varCCCodeDuplicate:LookUp('Cost Centres',Name="CC Code").Name}); //Search for duplicate CC Code
+            If(IsBlank(varCCNameDuplicate) || IsBlank(varCCNameDuplicate) ,
+                Patch(
+                    'Cost Centres',
+                    Defaults('Cost Centres'),
+                    {
+                        Name: "Add the Cost Centre Record",
+                        'Cost Centre code':"CC Code"
+                    }
+                ),
+                Notify("Can't create more than 1 new Cost Centre entry at the same time",NotificationType.Error,10000)
+            ); //Verify if no duplicate Codes or Names before adding new records with standard name
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =25
+        X: =1132
+        Y: =73
+        ZIndex: =7
+
+    btCCSubmit As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =If(LookUp(varSidebarMenu,Value="Cost Centre").FlowStatus,varSideBarColours.CompletedFill,varSideBarColours.NotcompletedFill)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+        OnSelect: |
+            =UpdateContext({varTest2: LookUp(varSidebarMenu,Value="Cost Centre").FlowStatus});
+            If(LookUp(varSidebarMenu,Value="Cost Centre").FlowStatus=false,
+                UpdateIf(varSidebarMenu,Value="Cost Centre",{FlowStatus:false}),
+                UpdateIf(varSidebarMenu,Value="Cost Centre",{FlowStatus:true})
+            );
+        PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =15
+        Text: ="Submit"
+        Tooltip: ="Submit all CC records on Screen"
+        X: =1018
+        Y: =705
+        ZIndex: =13
+
+    btCCBulkDelete As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =If(LookUp(varSidebarMenu,Value="Sector").FlowStatus,varSideBarColours.CompletedFill,varSideBarColours.NotcompletedFill)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+        OnSelect: |-
+            =RemoveIf('Cost Centres','Cost Centre' in colCCDeleteItems.Value);
+            UpdateContext({varCCBulkDelete: true});
+        PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =15
+        Text: ="Delete all marked CC records"
+        Visible: =Not(varCCBulkDelete)
+        Width: =305
+        X: =650
+        Y: =705
+        ZIndex: =14
+
+    grpCCDeletion As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+        rectBackgroundCC As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =
+            Fill: =RGBA(0,0,0,0.1)
+            FocusedBorderThickness: =4
+            Height: =Max(App.Height,App.MinScreenHeight)
+            HoverFill: =
+            PressedFill: |
+                =
+            Visible: =varCCDelete
+            Width: =Max(App.Width,App.MinScreenWidth)
+            ZIndex: =8
+
+        backgroundCCDelet As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(219, 230, 205, 1)
+            FocusedBorderThickness: =4
+            Height: =137
+            HoverFill: =
+            PressedFill: =RGBA(237, 237, 237, 1)
+            Visible: =varCCDelete
+            Width: =445
+            X: =353
+            Y: =302
+            ZIndex: =9
+
+        btCCDeletYes As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(149, 149, 149, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+            OnSelect: |-
+                =Remove('Cost Centres',galCostCentreInput.Selected);
+                UpdateContext({varCCDelete:false});//Remove confirmation box
+            PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: ="Yes"
+            Visible: =varCCDelete
+            X: =388
+            Y: =376
+            ZIndex: =10
+
+        btCCDeleteCancel As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(149, 149, 149, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+            OnSelect: |-
+                =UpdateContext({varCCDelete:false})
+            PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: ="Cancel"
+            Visible: =varCCDelete
+            X: =603
+            Y: =376
+            ZIndex: =11
+
+        labCCDeletionMsg As label:
+            Align: =Align.Center
+            AutoHeight: =true
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =152
+            Size: =13
+            Text: ="Are you sure you want to delete the """ & galCostCentreInput.Selected.Name & """ record?"
+            Visible: =varCCDelete
+            Width: =375
+            X: =388
+            Y: =314
+            ZIndex: =12
+
+    btCCAddBulkDelete As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =If(LookUp(varSidebarMenu,Value="Sector").FlowStatus,varSideBarColours.CompletedFill,varSideBarColours.NotcompletedFill)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+        OnSelect: |-
+            =UpdateContext({varCCBulkDelete: false});
+            Clear(colCCDeleteItems)
+        PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =15
+        Text: ="Bulk Delete"
+        Visible: =varCCBulkDelete
+        X: =763
+        Y: =705
+        ZIndex: =15
+
+    btCCCancelBulkDelete As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =If(LookUp(varSidebarMenu,Value="Sector").FlowStatus,varSideBarColours.CompletedFill,varSideBarColours.NotcompletedFill)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+        OnSelect: |-
+            =UpdateContext({varCCBulkDelete: true});
+        PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =15
+        Text: ="Cancel Delete"
+        Visible: =Not(varCCBulkDelete)
+        X: =1018
+        Y: =705
+        ZIndex: =16
+
+    grpCCGalHeadings As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =18
+
+        labCCHeading As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(219, 230, 205, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =41
+            Size: =13
+            Text: =""
+            Width: =1026
+            X: =152
+            Y: =66
+            ZIndex: =4
+
+        labCCCode As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Size: =13
+            Text: ="Code"
+            Width: =124
+            X: =164
+            Y: =66
+            ZIndex: =5
+
+        labCCName As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =41
+            Size: =13
+            Text: ="Cost Centre Name"
+            Width: =233
+            X: =288
+            Y: =66
+            ZIndex: =6
+
+        labCCBusinessUnit As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =41
+            Size: =13
+            Text: ="Business Unit"
+            Width: =352
+            X: =650
+            Y: =66
+            ZIndex: =17
+

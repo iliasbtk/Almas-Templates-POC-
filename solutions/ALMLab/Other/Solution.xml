@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.2.21062.128" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SolutionManifest>
+    <UniqueName>AlmasPOC</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="AlmasPOC" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Upgrade of AlmasPOC@Ilias" languagecode="1033" />
+    </Descriptions>
+    <Version>1.2.0.0</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>DefaultPublishertonietolligsenvironment</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Default Publisher for tonietolligsenvironment" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description description="Default publisher for this organization" languagecode="1033" />
+      </Descriptions>
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>new</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>10000</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="account" behavior="0" />
+      <RootComponent type="1" schemaName="canvasappextendedmetadata" behavior="2" />
+      <RootComponent type="1" schemaName="contact" behavior="0" />
+      <RootComponent type="1" schemaName="cr460_trailbalance" behavior="0" />
+      <RootComponent type="1" schemaName="new_businessunit" behavior="0" />
+      <RootComponent type="1" schemaName="new_costcentre" behavior="0" />
+      <RootComponent type="1" schemaName="transactioncurrency" behavior="0" />
+      <RootComponent type="9" schemaName="new_officeselection" behavior="0" />
+      <RootComponent type="9" schemaName="new_structurehierarchy" behavior="0" />
+      <RootComponent type="29" id="{57f29b13-14d8-eb11-bacb-00224800e081}" behavior="0" />
+      <RootComponent type="300" schemaName="new_almasprototyperev1_dd2ce" behavior="0" />
+      <RootComponent type="300" schemaName="new_devcanvaspowerappmodaldialog_50af0" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="1" schemaName="canvasappextendedmetadata" displayName="CanvasApp Extended Metadata" solution="CanvasAppEntityExtensionSolution (9.1.21062.210604004)" />
+        <Dependent type="1" schemaName="canvasappextendedmetadata" displayName="CanvasApp Extended Metadata" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="canvasappextendedmetadata" displayName="CanvasApp Extended Metadata" solution="CanvasAppEntityExtensionSolution (9.1.21062.210604004)" />
+        <Dependent type="10" schemaName="businessunit_canvasappextendedmetadata" displayName="businessunit_canvasappextendedmetadata" parentSchemaName="businessunit" parentDisplayName="Business Unit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="canvasappextendedmetadata" displayName="CanvasApp Extended Metadata" solution="CanvasAppEntityExtensionSolution (9.1.21062.210604004)" />
+        <Dependent type="2" schemaName="owningbusinessunit" displayName="Owning Business Unit" parentSchemaName="canvasappextendedmetadata" parentDisplayName="CanvasApp Extended Metadata" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="10" schemaName="businessunit_canvasappextendedmetadata" displayName="businessunit_canvasappextendedmetadata" parentSchemaName="businessunit" parentDisplayName="Business Unit" solution="CanvasAppEntityExtensionSolution (9.1.21062.210604004)" />
+        <Dependent type="10" schemaName="businessunit_canvasappextendedmetadata" displayName="businessunit_canvasappextendedmetadata" parentSchemaName="businessunit" parentDisplayName="Business Unit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="new_officeselection" displayName="Office Selection" parentSchemaName="businessunit" parentDisplayName="Business Unit" solution="Active" />
+        <Dependent type="29" displayName="Visibility of Office Selection" id="{57f29b13-14d8-eb11-bacb-00224800e081}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="new_officeselection" displayName="Office Selection" parentSchemaName="businessunit" parentDisplayName="Business Unit" solution="Active" />
+        <Dependent type="60" displayName="HR Entry" parentDisplayName="Business Unit" id="{61a39daa-10d8-eb11-bacb-00224800e081}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="new_structurehierarchy" displayName="Structure Hierarchy" parentSchemaName="businessunit" parentDisplayName="Business Unit" solution="Active" />
+        <Dependent type="29" displayName="Visibility of Office Selection" id="{57f29b13-14d8-eb11-bacb-00224800e081}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="new_structurehierarchy" displayName="Structure Hierarchy" parentSchemaName="businessunit" parentDisplayName="Business Unit" solution="Active" />
+        <Dependent type="60" displayName="HR Entry" parentDisplayName="Business Unit" id="{61a39daa-10d8-eb11-bacb-00224800e081}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="9" schemaName="cr460_chapter" displayName="Chapter Types" solution="Active" />
+        <Dependent type="2" schemaName="new_chapter" displayName="Chapter" parentSchemaName="account" parentDisplayName="Account" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

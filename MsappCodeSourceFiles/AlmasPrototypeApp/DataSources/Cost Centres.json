@@ -1,0 +1,100 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "new_costcentres",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "new_costcentre",
+    "MaxGetRowsCount": 500,
+    "Name": "Cost Centres",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "new_BusinessUnit": "Business Unit",
+      "new_costcentre_AsyncOperations": "System Jobs",
+      "new_costcentre_BulkDeleteFailures": "Bulk Delete Failures",
+      "new_costcentre_DuplicateBaseRecord": "Duplicate Records (new_costcentre_DuplicateBaseRecord)",
+      "new_costcentre_DuplicateMatchingRecord": "Duplicate Records (new_costcentre_DuplicateMatchingRecord)",
+      "new_costcentre_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "new_costcentre_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "new_costcentre_ProcessSession": "Process Sessions",
+      "new_costcentre_SyncErrors": "Sync Errors",
+      "new_costcentrecode": "Cost Centre code",
+      "new_costcentreid": "Cost Centre",
+      "new_cr460_TrailBalance_Costcentre_new_CostCen": "Trail Balances",
+      "new_description": "Description",
+      "new_name": "Name",
+      "new_test": "test",
+      "organizationid": "Organization Id",
+      "overriddencreatedon": "Record Created On",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Cost Centres",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Cost Centres (Views)",
+    "Name": "_new_costcentre_views",
+    "RelatedEntityName": "Cost Centres",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "3cc5db32-c28a-45c6-beaa-ea1b37be4b52": "Cost Centre Advanced Find View",
+      "42b7eb3f-b0c8-431a-b9c4-acabc8ea30f8": "Inactive Cost Centres",
+      "8d199eb7-2733-4e91-b66b-c63c83a409b5": "Active Cost Centres",
+      "9f3a7938-8662-4865-9896-007c3f4f7d4b": "Cost Centre Associated View",
+      "eea26a96-6c18-48d6-9934-bdb7c046205e": "Cost Centre Lookup View",
+      "ffc7bf9e-9fdd-eb11-bacb-000d3a872647": "Almas View"
+    }
+  },
+  {
+    "DisplayName": "Status (Cost Centres)",
+    "Name": "new_costcentre_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Cost Centres"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Cost Centres",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Cost Centres)",
+    "Name": "new_costcentre_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Cost Centres"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Cost Centres",
+    "Type": "OptionSetInfo"
+  }
+]

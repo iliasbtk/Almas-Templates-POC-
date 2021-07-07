@@ -1,0 +1,208 @@
+[
+  {
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "colDialogResponses",
+    "Schema": {
+      "Type": {
+        "EnumString": "",
+        "Kind": "Table",
+        "Name": "Root",
+        "Type": [
+          {
+            "EnumString": "",
+            "Kind": "String",
+            "Name": "dialogButtonPressed",
+            "Type": []
+          },
+          {
+            "EnumString": "N",
+            "Kind": "ObjNull",
+            "Name": "originalFunctionRequestID",
+            "Type": []
+          },
+          {
+            "EnumString": "",
+            "Kind": "String",
+            "Name": "responseAction",
+            "Type": []
+          },
+          {
+            "EnumString": "",
+            "Kind": "Record",
+            "Name": "responseData",
+            "Type": [
+              {
+                "EnumString": "",
+                "Kind": "Table",
+                "Name": "office365Users",
+                "Type": [
+                  {
+                    "EnumString": "",
+                    "Kind": "_MinPrimitive",
+                    "Name": "AccountEnabled",
+                    "Type": []
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "Table",
+                    "Name": "BusinessPhones",
+                    "Type": [
+                      {
+                        "EnumString": "",
+                        "Kind": "String",
+                        "Name": "Value",
+                        "Type": []
+                      }
+                    ]
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "City",
+                    "Type": []
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "CompanyName",
+                    "Type": []
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "Country",
+                    "Type": []
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "Department",
+                    "Type": []
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "DisplayName",
+                    "Type": []
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "GivenName",
+                    "Type": []
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "Id",
+                    "Type": []
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "JobTitle",
+                    "Type": []
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "Mail",
+                    "Type": []
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "MailNickname",
+                    "Type": []
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "OfficeLocation",
+                    "Type": []
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "PostalCode",
+                    "Type": []
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "Surname",
+                    "Type": []
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "TelephoneNumber",
+                    "Type": []
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "UserPrincipalName",
+                    "Type": []
+                  },
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "mobilePhone",
+                    "Type": []
+                  }
+                ]
+              },
+              {
+                "EnumString": "",
+                "Kind": "Image",
+                "Name": "penInput",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "String",
+                "Name": "penInputBase64",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "Number",
+                "Name": "rating",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "Number",
+                "Name": "slider",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "Table",
+                "Name": "textArray",
+                "Type": [
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "Value",
+                    "Type": []
+                  }
+                ]
+              },
+              {
+                "EnumString": "",
+                "Kind": "String",
+                "Name": "textInput",
+                "Type": []
+              }
+            ]
+          }
+        ]
+      },
+      "Version": "1.285"
+    },
+    "Type": "CollectionDataSourceInfo"
+  }
+]

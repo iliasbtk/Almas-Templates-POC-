@@ -1,0 +1,12 @@
+departmentInput As screen:
+    LoadingSpinnerColor: =RGBA(73, 130, 5, 1)
+
+    cmpSideNavDepartment As cmpSideNav:
+        CompletedFill: =varSideBarColours.CompletedFill
+        CurrentIndicatorFade: =varSideBarColours.CurrentIndicatorFade
+        Default: ="""Department"""
+        HoverFill: =varSideBarColours.Hoverfill
+        NotCompletedFill: =varSideBarColours.NotcompletedFill
+        TextColor: =varSideBarColours.TextColor
+        ZIndex: =2
+

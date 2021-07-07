@@ -1,0 +1,114 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr460_trailbalances",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr460_trailbalance",
+    "MaxGetRowsCount": 500,
+    "Name": "Trail Balances",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr460_Account": "Account",
+      "cr460_budget": "Budget",
+      "cr460_budget_base": "Budget (Base)",
+      "cr460_credit": "Credit",
+      "cr460_credit_base": "Credit (Base)",
+      "cr460_Currency": "Currency (cr460_Currency)",
+      "cr460_debit": "Debit",
+      "cr460_debit_base": "Debit (Base)",
+      "cr460_endingbalance": "Ending Balance",
+      "cr460_endingbalance_base": "Ending Balance (Base)",
+      "cr460_financialyearend": "Financial Year-end",
+      "cr460_name": "Name",
+      "cr460_openingbalance": "Opening Balance",
+      "cr460_openingbalance_base": "Opening Balance (Base)",
+      "cr460_trailbalance_AsyncOperations": "System Jobs",
+      "cr460_trailbalance_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr460_trailbalance_DuplicateBaseRecord": "Duplicate Records (cr460_trailbalance_DuplicateBaseRecord)",
+      "cr460_trailbalance_DuplicateMatchingRecord": "Duplicate Records (cr460_trailbalance_DuplicateMatchingRecord)",
+      "cr460_trailbalance_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr460_trailbalance_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr460_trailbalance_ProcessSession": "Process Sessions",
+      "cr460_trailbalance_SyncErrors": "Sync Errors",
+      "cr460_trailbalanceid": "Trail Balance",
+      "cr460_uniquecode": "Unique Code",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "new_Costcentre": "Cost centre",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency (transactioncurrencyid)",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Trail Balances",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Trail Balances (Views)",
+    "Name": "_cr460_trailbalance_views",
+    "RelatedEntityName": "Trail Balances",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0c111bd2-9288-4636-8991-8374f734fa0a": "Trail Balance Lookup View",
+      "0ef0f495-e44b-4eb4-b6c9-22c1cd63d8a9": "Trail Balance Advanced Find View",
+      "886b19f1-7208-46c2-a9d3-9610bfcc268b": "Active Trail Balances",
+      "d6d9eee8-7b40-49ce-99db-2dd95d5ccabd": "Inactive Trail Balances",
+      "f1fcee2e-2b13-4377-b637-8ba6527e06ab": "Trail Balance Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Trail Balances)",
+    "Name": "cr460_trailbalance_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Trail Balances"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Trail Balances",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Trail Balances)",
+    "Name": "cr460_trailbalance_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Trail Balances"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Trail Balances",
+    "Type": "OptionSetInfo"
+  }
+]

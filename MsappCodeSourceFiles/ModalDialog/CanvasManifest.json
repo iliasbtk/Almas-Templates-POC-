@@ -1,0 +1,56 @@
+{
+  "FormatVersion": "0.24",
+  "Header": {
+    "DocVersion": "1.285",
+    "MinVersionToLoad": "1.285",
+    "MSAppStructureVersion": "2.0"
+  },
+  "Properties": {
+    "AppCreationSource": "AppFromScratch",
+    "AppDescription": "",
+    "AppPreviewFlagsKey": [
+      "delayloadscreens",
+      "usedisplaynamemetadata",
+      "usenonblockingonstartrule",
+      "useguiddatatypes",
+      "useexperimentalcdsconnector",
+      "useenforcesavedatalimits",
+      "componentauthoring",
+      "reliableconcurrent",
+      "dataTableV2Control",
+      "nativecdsexperimental",
+      "reactFormulaBar"
+    ],
+    "Author": "",
+    "ContainsThirdPartyPcfControls": false,
+    "DefaultConnectedDataSourceMaxGetRowsCount": 500,
+    "DocumentAppType": "DesktopOrTablet",
+    "DocumentLayoutHeight": 768,
+    "DocumentLayoutLockOrientation": true,
+    "DocumentLayoutMaintainAspectRatio": true,
+    "DocumentLayoutOrientation": "landscape",
+    "DocumentLayoutScaleToFit": true,
+    "DocumentLayoutWidth": 1366,
+    "DocumentType": "App",
+    "EnableInstrumentation": false,
+    "FileID": "66f241b6-02e0-4342-8f46-6c88dd7fd720",
+    "Id": "8331ddde-00d3-40ca-8f0e-2ae12b0a3888",
+    "InstrumentationKey": "",
+    "LastControlUniqueId": 124,
+    "Name": "DEV-Canvas Power App Modal Dialog",
+    "OriginatingVersion": "1.277"
+  },
+  "PublishInfo": {
+    "AppName": "DEV-Canvas Power App Modal Dialog",
+    "BackgroundColor": "rgba(0, 176, 240, 1)",
+    "LogoFileName": "logo.jpg",
+    "PublishDataLocally": false,
+    "PublishResourcesLocally": false,
+    "PublishTarget": "player",
+    "UserLocale": "en-US"
+  },
+  "ScreenOrder": [
+    "Welcome Screen",
+    "Demo Screen"
+  ]
+}

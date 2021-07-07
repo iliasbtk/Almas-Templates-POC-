@@ -1,0 +1,96 @@
+[
+  {
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "colFunctionQueue",
+    "Schema": {
+      "Type": {
+        "EnumString": "",
+        "Kind": "Table",
+        "Name": "Root",
+        "Type": [
+          {
+            "EnumString": "",
+            "Kind": "String",
+            "Name": "action",
+            "Type": []
+          },
+          {
+            "EnumString": "",
+            "Kind": "String",
+            "Name": "calledFrom",
+            "Type": []
+          },
+          {
+            "EnumString": "N",
+            "Kind": "ObjNull",
+            "Name": "dialogButtonPressed",
+            "Type": []
+          },
+          {
+            "EnumString": "N",
+            "Kind": "ObjNull",
+            "Name": "endTime",
+            "Type": []
+          },
+          {
+            "EnumString": "",
+            "Kind": "String",
+            "Name": "function",
+            "Type": []
+          },
+          {
+            "EnumString": "",
+            "Kind": "_MinPrimitive",
+            "Name": "functionActive",
+            "Type": []
+          },
+          {
+            "EnumString": "",
+            "Kind": "_MinPrimitive",
+            "Name": "haltProcess",
+            "Type": []
+          },
+          {
+            "EnumString": "N",
+            "Kind": "ObjNull",
+            "Name": "inputResponse",
+            "Type": []
+          },
+          {
+            "EnumString": "",
+            "Kind": "String",
+            "Name": "requestID",
+            "Type": []
+          },
+          {
+            "EnumString": "",
+            "Kind": "DateTime",
+            "Name": "requestTime",
+            "Type": []
+          },
+          {
+            "EnumString": "",
+            "Kind": "String",
+            "Name": "sessionID",
+            "Type": []
+          },
+          {
+            "EnumString": "N",
+            "Kind": "ObjNull",
+            "Name": "startTime",
+            "Type": []
+          },
+          {
+            "EnumString": "",
+            "Kind": "_MinPrimitive",
+            "Name": "userActivatedCall",
+            "Type": []
+          }
+        ]
+      },
+      "Version": "1.285"
+    },
+    "Type": "CollectionDataSourceInfo"
+  }
+]

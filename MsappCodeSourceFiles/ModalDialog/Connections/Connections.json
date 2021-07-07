@@ -1,0 +1,21 @@
+{
+  "3f281771-fe57-4622-81d5-9de641fcc709": {
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_office365users/connections/019df63fa64044c5bbf32f21583672d8",
+    "connectionRef": {
+      "apiTier": "Standard",
+      "bypassConsent": false,
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/office365users/icon_1.0.1335.1964.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "isOnPremiseConnection": false,
+      "parameterHints": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "3f281771-fe57-4622-81d5-9de641fcc709"
+  }
+}

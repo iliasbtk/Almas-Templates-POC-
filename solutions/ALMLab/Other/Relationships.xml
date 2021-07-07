@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_cr460_trailbalance" />
+  <EntityRelationship Name="businessunit_canvasappextendedmetadata" />
+  <EntityRelationship Name="cr460_TrailBalance_Account_Account" />
+  <EntityRelationship Name="cr460_TrailBalance_Currency_TransactionCu" />
+  <EntityRelationship Name="lk_cr460_trailbalance_createdby" />
+  <EntityRelationship Name="lk_cr460_trailbalance_modifiedby" />
+  <EntityRelationship Name="lk_new_businessunit_createdby" />
+  <EntityRelationship Name="lk_new_businessunit_modifiedby" />
+  <EntityRelationship Name="lk_new_costcentre_createdby" />
+  <EntityRelationship Name="lk_new_costcentre_modifiedby" />
+  <EntityRelationship Name="new_BusinessUnit_ParentBusinessUnit_new_B" />
+  <EntityRelationship Name="new_CostCentre_BusinessUnit_new_BusinessU" />
+  <EntityRelationship Name="new_CostCentre_test_new_BusinessUnit" />
+  <EntityRelationship Name="new_cr460_TrailBalance_Costcentre_new_CostCen" />
+  <EntityRelationship Name="organization_new_businessunit" />
+  <EntityRelationship Name="organization_new_costcentre" />
+  <EntityRelationship Name="owner_cr460_trailbalance" />
+  <EntityRelationship Name="team_cr460_trailbalance" />
+  <EntityRelationship Name="TransactionCurrency_cr460_TrailBalance" />
+  <EntityRelationship Name="user_cr460_trailbalance" />
+</EntityRelationships>

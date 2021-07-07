@@ -1,0 +1,266 @@
+[
+  {
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "colDialogInstructions",
+    "Schema": {
+      "Type": {
+        "EnumString": "",
+        "Kind": "Table",
+        "Name": "Root",
+        "Type": [
+          {
+            "EnumString": "",
+            "Kind": "Record",
+            "Name": "configOffice365Users",
+            "Type": [
+              {
+                "EnumString": "",
+                "Kind": "_MinPrimitive",
+                "Name": "allowMultipleSelect",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "String",
+                "Name": "tooltip",
+                "Type": []
+              }
+            ]
+          },
+          {
+            "EnumString": "",
+            "Kind": "Record",
+            "Name": "configPenInput",
+            "Type": [
+              {
+                "EnumString": "",
+                "Kind": "_MinPrimitive",
+                "Name": "showControls",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "Number",
+                "Name": "size",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "String",
+                "Name": "tooltip",
+                "Type": []
+              }
+            ]
+          },
+          {
+            "EnumString": "",
+            "Kind": "Record",
+            "Name": "configRating",
+            "Type": [
+              {
+                "EnumString": "",
+                "Kind": "Number",
+                "Name": "default",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "Number",
+                "Name": "max",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "_MinPrimitive",
+                "Name": "showValue",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "String",
+                "Name": "tooltip",
+                "Type": []
+              }
+            ]
+          },
+          {
+            "EnumString": "",
+            "Kind": "Record",
+            "Name": "configSlider",
+            "Type": [
+              {
+                "EnumString": "",
+                "Kind": "Number",
+                "Name": "default",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "Number",
+                "Name": "max",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "Number",
+                "Name": "min",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "_MinPrimitive",
+                "Name": "showValue",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "String",
+                "Name": "tooltip",
+                "Type": []
+              }
+            ]
+          },
+          {
+            "EnumString": "",
+            "Kind": "Record",
+            "Name": "configTextArray",
+            "Type": [
+              {
+                "EnumString": "",
+                "Kind": "_MinPrimitive",
+                "Name": "allowMultipleSelect",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "Table",
+                "Name": "arrayList",
+                "Type": [
+                  {
+                    "EnumString": "",
+                    "Kind": "String",
+                    "Name": "Value",
+                    "Type": []
+                  }
+                ]
+              },
+              {
+                "EnumString": "",
+                "Kind": "String",
+                "Name": "defaultValue",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "String",
+                "Name": "tooltip",
+                "Type": []
+              }
+            ]
+          },
+          {
+            "EnumString": "",
+            "Kind": "Record",
+            "Name": "configTextInput",
+            "Type": [
+              {
+                "EnumString": "",
+                "Kind": "String",
+                "Name": "default",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "String",
+                "Name": "hintText",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "String",
+                "Name": "tooltip",
+                "Type": []
+              }
+            ]
+          },
+          {
+            "EnumString": "",
+            "Kind": "Color",
+            "Name": "iconColor",
+            "Type": []
+          },
+          {
+            "EnumString": "",
+            "Kind": "String",
+            "Name": "iconType",
+            "Type": []
+          },
+          {
+            "EnumString": "",
+            "Kind": "String",
+            "Name": "inputType",
+            "Type": []
+          },
+          {
+            "EnumString": "",
+            "Kind": "Record",
+            "Name": "link",
+            "Type": [
+              {
+                "EnumString": "",
+                "Kind": "String",
+                "Name": "label",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "String",
+                "Name": "tooltip",
+                "Type": []
+              },
+              {
+                "EnumString": "",
+                "Kind": "String",
+                "Name": "url",
+                "Type": []
+              }
+            ]
+          },
+          {
+            "EnumString": "",
+            "Kind": "String",
+            "Name": "message",
+            "Type": []
+          },
+          {
+            "EnumString": "N",
+            "Kind": "ObjNull",
+            "Name": "originalFunctionRequestID",
+            "Type": []
+          },
+          {
+            "EnumString": "",
+            "Kind": "String",
+            "Name": "responseAction",
+            "Type": []
+          },
+          {
+            "EnumString": "",
+            "Kind": "String",
+            "Name": "source",
+            "Type": []
+          },
+          {
+            "EnumString": "",
+            "Kind": "String",
+            "Name": "type",
+            "Type": []
+          }
+        ]
+      },
+      "Version": "1.285"
+    },
+    "Type": "CollectionDataSourceInfo"
+  }
+]
