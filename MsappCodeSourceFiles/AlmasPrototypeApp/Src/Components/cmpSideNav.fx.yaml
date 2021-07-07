@@ -1,0 +1,174 @@
+cmpSideNav As CanvasComponent:
+    CompletedFill: =RGBA(51, 91, 3, 1)
+    CurrentIndicatorFade: =20%
+    Default: ="Item 2"
+    Fill: =Transparent
+    Height: =Max(App.Height,App.MinScreenHeight)
+    HoverFill: =RGBA(255,255,255,20%)
+    Items: |-
+        =Table(
+            {
+                Value: "Item 1",
+                Icon: Icon.Waypoint,
+                Screen: App.ActiveScreen,
+                Flowstatus:true
+            },
+            {
+                Value: "Item 2",
+                Icon: Icon.Waypoint,
+                Screen: App.ActiveScreen,
+                Flowstatus:false
+            },
+            {
+                Value: "Item 3",
+                Icon: Icon.Waypoint,
+                Screen: App.ActiveScreen,
+                Flowstatus:false
+            },
+            {
+                Value: "Item 4",
+                Icon: Icon.Waypoint,
+                Screen: App.ActiveScreen,
+                Flowstatus:false
+            },
+            {
+                Value: "Item 5",
+                Icon: Icon.Waypoint,
+                Screen: App.ActiveScreen,
+                Flowstatus:false
+            },
+            {
+                Value: "Item 6",
+                Icon: Icon.Waypoint,
+                Screen: App.ActiveScreen,
+                Step:"Do Item 2",
+                Flowstatus:false
+            }
+        )
+    NotCompletedFill: =RGBA(168, 0, 0, 1)
+    TextColor: =White
+    Width: =100
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    galSidebar As gallery.galleryVertical:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Fill: =Transparent
+        Height: =cmpSideNav.Height-50
+        Items: =cmpSideNav.Items
+        Layout: =Layout.Vertical
+        OnSelect: =Navigate(ThisItem.Screen)
+        ShowScrollbar: =false
+        TemplateFill: =
+        TemplatePadding: =0
+        TemplateSize: =Parent.Height/8.5
+        Width: =cmpSideNav.Width
+        Y: =50
+        ZIndex: =1
+
+        labSideFlowstatus As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(ThisItem.Flowstatus,cmpSideNav.CompletedFill,cmpSideNav.NotCompletedFill)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =Parent.TemplateHeight
+            OnSelect: =Select(Parent)
+            Size: =13
+            Text: =
+            Width: =Parent.Width
+            Y: =0.3529411764705941
+            ZIndex: =1
+
+        iconSideBar As icon.Waypoint:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Color: =White
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =35  
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =ThisItem.Icon
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =35  
+            X: =(Parent.TemplateWidth-Self.Width)/2
+            Y: =15
+            ZIndex: =2
+
+        labSideValue As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: =ThisItem.Value
+            Width: =Parent.TemplateWidth
+            Y: =50
+            ZIndex: =3
+
+        labSideCurrent As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =Transparent
+            Fill: |-
+                =If(
+                    ThisItem.Flowstatus = true,
+                    ColorFade(
+                        cmpSideNav.CompletedFill,
+                        cmpSideNav.CurrentIndicatorFade
+                    ),
+                    ColorFade(
+                        cmpSideNav.NotCompletedFill,
+                        cmpSideNav.CurrentIndicatorFade
+                    )
+                )
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =Parent.TemplateHeight
+            OnSelect: =Select(Parent)
+            Size: =13
+            Text: =
+            Visible: =ThisItem.Value = cmpSideNav.Default
+            Width: =10
+            ZIndex: =4
+
+        labSideOverlay As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =Transparent
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =Parent.TemplateHeight
+            HoverFill: =cmpSideNav.HoverFill
+            OnSelect: =Select(Parent)
+            Size: =13
+            Text: =
+            Width: =Parent.Width
+            Y: =0.3529411764705941
+            ZIndex: =5
+

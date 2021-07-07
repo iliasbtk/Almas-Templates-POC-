@@ -1,0 +1,46 @@
+cmpHeader As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    HeadingIcon: =SampleImage
+    HeadingText: ="Text"
+    Height: =50 
+    Width: =App.Width
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    rctHeader As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledFill: =RGBA(166, 166, 166, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(168, 0, 0, 1)
+        FocusedBorderThickness: =4
+        Height: =cmpHeader.Height
+        HoverFill: |
+            =
+        PressedFill: =
+        Width: =cmpHeader.Width
+        ZIndex: =1
+
+    labHeading As label:
+        Align: =Align.Center
+        AutoHeight: =true
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =White
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =Transparent
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =50
+        Size: =25
+        Text: =cmpHeader.HeadingText
+        Width: =cmpHeader.Width/2
+        X: =cmpHeader.Width/4
+        ZIndex: =2
+

@@ -1,0 +1,42 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": true,
+  "ComponentManifest": {
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "cmpModalDialog",
+    "TemplateGuid": "b7ba4635b4fe49fd8b43fb89e2027ec5"
+  },
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [
+    {
+      "Category": 0,
+      "DisplayName": "Theme",
+      "Hidden": false,
+      "Name": "Theme",
+      "PropertyDataTypeKey": "Record",
+      "Tooltip": "The Theme use thoughout the component",
+      "Type": "{\"Version\":\"1.285\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Record\",\"EnumString\":\"\",\"Type\":[{\"Name\":\"buttonCancelFill\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"buttonCancelFontColor\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"buttonNoFill\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"buttonNoFontColor\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"buttonOkFill\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"buttonOkFontColor\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"buttonYesFill\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"buttonYesFontColor\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"fontColor\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"fontSize\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"fontType\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"modalBackground\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"primaryColor\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]}]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Version",
+      "Hidden": true,
+      "Name": "Version",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "Version of the Component",
+      "Type": "{\"Version\":\"1.285\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    }
+  ],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": false,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "637259992564685015",
+  "Name": "b7ba4635b4fe49fd8b43fb89e2027ec5",
+  "OverridableProperties": {},
+  "Version": "637259993874922705"
+}

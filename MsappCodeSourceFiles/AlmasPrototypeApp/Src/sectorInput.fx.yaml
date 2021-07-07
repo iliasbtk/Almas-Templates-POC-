@@ -1,0 +1,524 @@
+sectorInput As screen:
+    LoadingSpinnerColor: =RGBA(73, 130, 5, 1)
+    OnVisible: =
+
+    cmpHeaderSector As cmpHeader:
+        HeadingIcon: ='Almas Image'
+        HeadingText: ="Sector Input Screen"
+
+    "galSectorInput As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+        BorderColor: =RGBA(166, 166, 166, 1)
+        BorderStyle: =Solid
+        Fill: =RGBA(255,255,255,1)
+        Height: =573
+        Items: |
+            =Filter(BusinessUnits,'Hierarchy Structure'='Structure Hierarchy Choices'.Sector)
+            
+        Layout: =Layout.Vertical
+        OnSelect: =
+        TemplateFill: |
+            =If(ThisItem.IsSelected,RGBA(0, 0, 0, 5%),White)
+        TemplatePadding: =0
+        TemplateSize: =31
+        Width: =1026
+        X: =152
+        Y: =120
+        ZIndex: =1
+
+        btDelSector As icon.Trash:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Color: =RGBA(73, 130, 5, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =25
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Trash
+            OnSelect: |-
+                =UpdateContext({varSectorDelete:true})
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Tooltip: ="Delete Record"
+            Width: =25
+            X: =990
+            Y: =1
+            ZIndex: =1
+
+        btSaveSector As icon.Save:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Color: =RGBA(73, 130, 5, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            DisplayMode: =If(IsBlankOrError(txtSectorName),Disabled,Edit)
+            FocusedBorderThickness: =4
+            Height: =25
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Save
+            OnSelect: |
+                =//Notify(Validate('Business Units',"name",txtSectorName.Text),NotificationType.Error);
+                Patch(
+                    BusinessUnits,
+                    galSectorInput.Selected,
+                    {Name: Trim(txtSectorName.Text)},
+                    {'Parent Business Unit':LookUp(BusinessUnits,Name=ddSectorEntity.Selected.Name)},
+                    {'Office Selection':ddSectorBOFO.Selected.Value}
+                );
+                If(IsEmpty(Errors(BusinessUnits)),
+                    Set(varEditRecord,GUID());,
+                    Notify("Can't save the record! Error: " & First(Errors(BusinessUnits)).Message & If(First(Errors(BusinessUnits)).Error = 6,".Trying to create duplicate record",""),NotificationType.Error ,5000)    
+                );
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Tooltip: ="Save"
+            Visible: =If(ThisItem.BusinessUnit = varEditRecord,true,false)
+            Width: =25
+            X: =949
+            Y: =1
+            ZIndex: =5
+
+        btCancelSector As icon.Save:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Color: =RGBA(73, 130, 5, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =25
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.CancelBadge
+            OnSelect: |-
+                =Reset([@txtSectorName]);
+                Reset([@ddSectorEntity]);
+                Reset([@ddSectorBOFO]);
+                UpdateContext({sectorValidateName: true});
+                Set(varEditRecord,GUID());
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Tooltip: ="Cancel"
+            Visible: =If(ThisItem.BusinessUnit = varEditRecord,true,false)
+            Width: =25
+            X: =915
+            Y: =1
+            ZIndex: =6
+
+        btEditSector As icon.Edit:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Color: =RGBA(73, 130, 5, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =25
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Edit
+            OnSelect: |
+                =Set(varEditRecord,ThisItem.BusinessUnit)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Tooltip: ="Idet the Sector Record"
+            Visible: |
+                =If(varEditRecord = ThisItem.BusinessUnit,false,true)
+                
+            Width: =25
+            X: =915
+            Y: =1
+            ZIndex: =7
+
+        grpSectorInput As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =10
+
+            txtSectorName As text:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(51, 51, 51, 1)
+                Default: =ThisItem.Name
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: |
+                    =If(ThisItem.BusinessUnit = varEditRecord,DisplayMode.Edit,DisplayMode.View)
+                Fill: =If(varEditRecord=ThisItem.BusinessUnit,RGBA(253,222,207,1),RGBA(255,255,255,0))
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                Height: =35
+                HintText: ="Try this"
+                HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                OnChange: =
+                OnSelect: =Select(Parent)
+                PressedBorderColor: =RGBA(73, 130, 5, 1)
+                PressedColor: =RGBA(51, 51, 51, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =12
+                Tooltip: ="Add the Sector Name"
+                Width: =365
+                ZIndex: =2
+
+            ddSectorBOFO As dropdown:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.None
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronDisabledBackground: =RGBA(237, 237, 237, 1)
+                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                ChevronFill: =RGBA(33, 33, 33, 1)
+                ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                Color: =RGBA(51, 51, 51, 1)
+                Default: |
+                    =ThisItem.'Office Selection'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =If(ThisItem.BusinessUnit = varEditRecord,DisplayMode.Edit,DisplayMode.View)
+                Fill: =
+                Font: =Font.'Segoe UI'
+                Height: =35
+                HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(232, 244, 217, 1)
+                Items: =Choices('Office Selection Choices').Value
+                OnChange: =
+                OnSelect: =Select(Parent)
+                PaddingBottom: =5
+                PaddingLeft: =12
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(73, 130, 5, 1)
+                SelectionFill: =RGBA(73, 130, 5, 1)
+                Size: =12
+                Width: =172
+                X: =730
+                Y: =1
+                ZIndex: =4
+
+            ddSectorEntity As dropdown:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.None
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                ChevronFill: =RGBA(33, 33, 33, 1)
+                ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                Color: =RGBA(51, 51, 51, 1)
+                Default: |
+                    =ThisItem.'Parent Business Unit'.Name
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =If(ThisItem.BusinessUnit = varEditRecord,DisplayMode.Edit,DisplayMode.View)
+                Fill: =If(varEditRecord=ThisItem.BusinessUnit,RGBA(253,222,207,1),RGBA(255,255,255,0))
+                Font: =Font.'Segoe UI'
+                Height: =35
+                HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(212, 212, 212, 1)
+                Items: =Filter(BusinessUnits,'Hierarchy Structure'='Structure Hierarchy Choices'.Entity).Name
+                OnSelect: =Select(Parent)
+                PaddingBottom: =5
+                PaddingLeft: =12
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(73, 130, 5, 1)
+                SelectionFill: =RGBA(73, 130, 5, 1)
+                Size: =12
+                Width: =365
+                X: =365
+                ZIndex: =9
+
+    cmpSideNavSector As cmpSideNav:
+        CompletedFill: =varSideBarColours.CompletedFill
+        CurrentIndicatorFade: =varSideBarColours.CurrentIndicatorFade
+        Default: ="""Sector"""
+        HoverFill: =varSideBarColours.Hoverfill
+        Items: =varSidebarMenu
+        NotCompletedFill: =varSideBarColours.NotcompletedFill
+        TextColor: =varSideBarColours.TextColor
+        ZIndex: =2
+
+    grpSectorGalleryHeading As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =6
+
+        labSectorHeading As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(219, 230, 205, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =41
+            Size: =13
+            Text: =""
+            Width: =1026
+            X: =152
+            Y: =66
+            ZIndex: =3
+
+        labSector As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Size: =13
+            Text: ="Sector Name"
+            Width: =169
+            X: =164
+            Y: =66
+            ZIndex: =4
+
+        labEntity As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Size: =13
+            Text: ="Entity"
+            Width: =169
+            X: =505
+            Y: =67
+            ZIndex: =5
+
+        labBOFO As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =41
+            Size: =13
+            Text: ="Back or Front Office"
+            Width: =206
+            X: =847
+            Y: =66
+            ZIndex: =6
+
+    btAddSector As icon.Add:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(73, 130, 5, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =25
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Add
+        OnSelect: |
+            =UpdateContext({varSectorDuplicate:LookUp(BusinessUnits,Name="Add the Sector Record").BusinessUnit});
+            If(IsBlank(varSectorDuplicate),
+                Patch(
+                    BusinessUnits,
+                    Defaults(BusinessUnits),
+                    {
+                        Name: "Add the Sector Record",
+                        'Hierarchy Structure':'Structure Hierarchy Choices'.Sector,
+                        'Parent Business Unit': First(BusinessUnits)
+                    }
+                ),
+                Notify("Can't create more than 1 new Sector entry at the same time",NotificationType.Error,10000)
+            );
+            If(IsEmpty(Errors(BusinessUnits)),
+                Set(varEditRecord,First(LastN(BusinessUnits,2)).BusinessUnit),
+                Notify("Can't add a new record! Error: " & First(Errors(BusinessUnits)).Message,NotificationType.Error)    
+            );
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =25
+        X: =1132
+        Y: =73
+        ZIndex: =7
+
+    btSectorSubmit As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =If(LookUp(varSidebarMenu,Value="Sector").FlowStatus,varSideBarColours.CompletedFill,varSideBarColours.NotcompletedFill)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+        OnSelect: |-
+            =UpdateIf(varSidebarMenu,Value="Sector",{FlowStatus:true})
+            //Set(varSidebarMenu,Patch(varSidebarMenu,{(LookUp(varSidebarMenu,Value="Sector").FlowStatus: false})
+        PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =15
+        Text: ="Submit"
+        X: =1018
+        Y: =705
+        ZIndex: =13
+
+    grpSectorDeletion As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+        rectBackground As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =
+            Fill: =RGBA(0,0,0,0.1)
+            FocusedBorderThickness: =4
+            Height: =Max(App.Height,App.MinScreenHeight)
+            HoverFill: =
+            PressedFill: |
+                =
+            Visible: =varSectorDelete
+            Width: =Max(App.Width,App.MinScreenWidth)
+            ZIndex: =8
+
+        background As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(219, 230, 205, 1)
+            FocusedBorderThickness: =4
+            Height: =137
+            HoverFill: =
+            PressedFill: =RGBA(237, 237, 237, 1)
+            Visible: =varSectorDelete
+            Width: =445
+            X: =353
+            Y: =302
+            ZIndex: =9
+
+        btYes As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(149, 149, 149, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+            OnSelect: |-
+                =Remove(BusinessUnits,galSectorInput.Selected);
+                UpdateContext({varSectorDelete:false});//Remove confirmation box
+            PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: ="Yes"
+            Visible: =varSectorDelete
+            X: =388
+            Y: =376
+            ZIndex: =10
+
+        btCancel As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(149, 149, 149, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+            OnSelect: |-
+                =UpdateContext({varSectorDelete:false})
+            PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: ="Cancel"
+            Visible: =varSectorDelete
+            X: =603
+            Y: =376
+            ZIndex: =11
+
+        labSectorDeletionMsg As label:
+            Align: =Align.Center
+            AutoHeight: =true
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =152
+            Size: =13
+            Text: ="Are you sure you want to delete the """ & galSectorInput.Selected.Name & """ record?"
+            Visible: =varSectorDelete
+            Width: =375
+            X: =388
+            Y: =314
+            ZIndex: =12
+

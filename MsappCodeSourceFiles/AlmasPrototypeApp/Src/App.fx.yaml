@@ -1,0 +1,43 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |
+        =ClearCollect(
+            varSidebarMenu,
+            Table(
+                {
+                    Value: "Sector",
+                    Icon: Icon.ChevronRight,
+                    Screen: sectorInput,
+                    FlowStatus: false
+                },
+                {
+                    Value: "Department",
+                    Icon: Icon.ChevronRight,
+                    Screen: departmentInput,
+                    FlowStatus: false
+                },
+                {
+                    Value: "Section",
+                    Icon: Icon.ChevronRight,
+                    Screen: sectionInput,
+                    FlowStatus: false
+                },
+                {
+                    Value: "Cost Centre",
+                    Icon: Icon.ChevronRight,
+                    Screen: ccInput,
+                    FlowStatus: false
+                }
+            )
+        );
+        Set(
+            varSideBarColours,
+            {
+                TextColor: RGBA(0,0,0,1),
+                CompletedFill: RGBA(73, 130, 5, 1),
+                NotcompletedFill: RGBA(166, 166, 166, 1),
+                Hoverfill: RGBA(255,255,255,20%),
+                CurrentIndicatorFade: -30%
+            }
+        );
+

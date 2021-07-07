@@ -1,0 +1,1618 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.4.json",
+  "runs": [
+    {
+      "columnKind": "utf16CodeUnits",
+      "invocations": [
+        {
+          "endTimeUtc": "2020-05-25T10:29:48.245Z",
+          "executionSuccessful": true,
+          "startTimeUtc": "2020-05-25T10:29:48.235Z"
+        }
+      ],
+      "results": [
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.IGNORE BUT DONT DELETE - REQUIRED SCHEMA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.IGNORE BUT DONT DELETE - REQUIRED SCHEMA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1396,
+                  "charOffset": 523,
+                  "snippet": {
+                    "text": "//////////////////////////////////////////////////////////////////////////////////////\n//                                                                                  //\n// IGNORE BUT DON'T DELETE: This is just a dummy button to make sure that           //\n//                                                                                  //\n// the component recognises the required Collection schemas                         //\n//////////////////////////////////////////////////////////////////////////////////////\n\nClearCollect(\n    colDialogInstructions,\n    {\n        // -- Generic Popup Info -- //\n        type: \"Ok\",\n        inputType: \"\",\n        message: \"\",\n        source: \"\",\n        iconType: Icon.Information,\n        iconColor: Color.OrangeRed,\n        // -- Input Type Configuration (REQUIRED if type = \"input\") -- //\n        configTextInput: {\n            default: \"\",\n            hintText: \"\",\n            tooltip: \"\"\n        },\n        configTextArray: {\n            tooltip: \"\",\n            arrayList: [\"\"],\n            defaultValue: \"\",\n            allowMultipleSelect: false\n        },\n        configOffice365Users: {\n            tooltip: \"\",\n            allowMultipleSelect: false\n        },\n        configRating: {\n            default: 1,\n            tooltip: \"\",\n            max: 1,\n            showValue: true\n        },\n        configSlider: {\n            default: 1,\n            tooltip: \"\",\n            min: 1,\n            max: 1,\n            showValue: true\n        },\n        configPenInput: {\n            tooltip:\"\",\n            size:1,\n            showControls: true\n        },\n        // -- Link Information (OPTIONAL) -- //\n        link: {\n            label: \"\",\n            url: \"\",\n            tooltip: \"\"\n        },\n        // -- Response Section. (REQUIRED if you want to trigger an action) -- //\n        responseAction: \"\",\n        originalFunctionRequestID: Blank()\n    }\n);\nClearCollect(\n    colFunctionQueue,\n    {\n        function: \"Validation\",\n        action: \"\",\n        calledFrom: \"\",\n        userActivatedCall: true,\n        sessionID: \"\",\n        requestID: Text(GUID()),\n        requestTime: Now(),\n        startTime: Blank(),\n        endTime: Blank(),\n        functionActive: true,\n        haltProcess: false,\n        inputResponse: Blank(),\n        dialogButtonPressed: Blank()\n    }\n)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.IGNORE BUT DONT DELETE - REQUIRED SCHEMA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogInstructions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.IGNORE BUT DONT DELETE - REQUIRED SCHEMA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.IGNORE BUT DONT DELETE - REQUIRED SCHEMA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 423,
+                  "charOffset": 1921,
+                  "snippet": {
+                    "text": "//////////////////////////////////////////////////////////////////////////////////////\n//                                                                                  //\n// IGNORE BUT DON'T DELETE: This is just a dummy button to make sure that           //\n//                                                                                  //\n// the component recognises the required Collection schemas                         //\n//////////////////////////////////////////////////////////////////////////////////////\n\nClearCollect(\n    colDialogInstructions,\n    {\n        // -- Generic Popup Info -- //\n        type: \"Ok\",\n        inputType: \"\",\n        message: \"\",\n        source: \"\",\n        iconType: Icon.Information,\n        iconColor: Color.OrangeRed,\n        // -- Input Type Configuration (REQUIRED if type = \"input\") -- //\n        configTextInput: {\n            default: \"\",\n            hintText: \"\",\n            tooltip: \"\"\n        },\n        configTextArray: {\n            tooltip: \"\",\n            arrayList: [\"\"],\n            defaultValue: \"\",\n            allowMultipleSelect: false\n        },\n        configOffice365Users: {\n            tooltip: \"\",\n            allowMultipleSelect: false\n        },\n        configRating: {\n            default: 1,\n            tooltip: \"\",\n            max: 1,\n            showValue: true\n        },\n        configSlider: {\n            default: 1,\n            tooltip: \"\",\n            min: 1,\n            max: 1,\n            showValue: true\n        },\n        configPenInput: {\n            tooltip:\"\",\n            size:1,\n            showControls: true\n        },\n        // -- Link Information (OPTIONAL) -- //\n        link: {\n            label: \"\",\n            url: \"\",\n            tooltip: \"\"\n        },\n        // -- Response Section. (REQUIRED if you want to trigger an action) -- //\n        responseAction: \"\",\n        originalFunctionRequestID: Blank()\n    }\n);\nClearCollect(\n    colFunctionQueue,\n    {\n        function: \"Validation\",\n        action: \"\",\n        calledFrom: \"\",\n        userActivatedCall: true,\n        sessionID: \"\",\n        requestID: Text(GUID()),\n        requestTime: Now(),\n        startTime: Blank(),\n        endTime: Blank(),\n        functionActive: true,\n        haltProcess: false,\n        inputResponse: Blank(),\n        dialogButtonPressed: Blank()\n    }\n)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.IGNORE BUT DONT DELETE - REQUIRED SCHEMA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colFunctionQueue"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.btnExamplePopupInstruction.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.btnExamplePopupInstruction.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1987,
+                  "charOffset": 721,
+                  "snippet": {
+                    "text": "//////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                                                                                  //\n//  For more information on how to structure the instruction to the popup as well as the response   //\n//  that it will be sending back please refer to:                                                   //\n//  https://aka.ms/powerapps-popup                                                                  //\n//                                                                                                  //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\nCollect(\n    colDialogInstructions,\n    {\n        // -- Generic Popup Info -- //\n        type: \"Ok\",\n        inputType: Blank(),\n        message: \"Congratulations with installing your brand new Modal Dialog Component into your first app. You are a rock star! If you agree, click on Ok below.\",\n        source: \"ThisButton\",\n        iconType: Icon.Information,\n        iconColor: ColorValue(\"#712773\"),\n        // -- Input Type Configuration (REQUIRED if type = \"input\") -- //\n        configTextInput: {\n            default: \"Default Value\",\n            hintText: \"Check this out\"\n        },\n        configTextArray: {\n            tooltip: \"Please choose one of these options\",\n            arrayList: [\n                \"Power Apps Rocks\",\n                \"Power Apps is the best\"\n            ],\n            defaultValue: \"Power Apps Rocks\",\n            allowMultipleSelect: false\n        },\n        configOffice365Users: {\n            tooltip: \"Please select one of the users in you address list\",\n            allowMultipleSelect: false\n        },\n        configRating: {\n            default: 0,\n            tooltip: \"Please rate the component from 1 to 5\",\n            max: 5,\n            showValue: true\n        },\n        configSlider: {\n            default: 0,\n            tooltip: \"How many times did you struggle during this installation\",\n            min: 1,\n            max: 10,\n            showValue: true\n        },\n        configPenInput: {\n            tooltip:\"Give us your million dollar signature\",\n            size:1,\n            showControls: true\n        },\n        // -- Link Information (OPTIONAL) -- //\n        link: {\n            label: \"More Cool Info\",\n            url: \"https://aka.ms/powerapps-popup\",\n            tooltip: \"Please check out more information about the modal dialog component\"\n        },\n        // -- Response Section. (REQUIRED if you want to trigger an action) -- //\n        responseAction: \"\",\n        originalFunctionRequestID: Blank()\n    }\n)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.btnExamplePopupInstruction"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogInstructions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.tglDialogResponseTrigger.OnCheck"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.tglDialogResponseTrigger.OnCheck",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 55,
+                  "charOffset": 5967,
+                  "snippet": {
+                    "text": "//////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                                                                                  //\n//  This toggle control triggers on the colDialogResponses collection and is used to                //\n//  action responses from the model dialog. As part of the object that is 'sent' to the             //\n//  modal dialog, we include a responseAction property which identifies the action to take place    //\n//  if the user selects an option or selects an item from the drop down. This responseAction can    //\n//  then be tracked by this toggle to initiate certain code or functions. If the responseAction     //\n//  doesn't contain a value, then we don't have to do anything.                                     //\n//                                                                                                  //\n//  For more information about the popup, please go to aka.ms/powerapps-popup                       //\n//                                                                                                  //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//  START: Function Initiation (NO modification required)                                           //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//Get a handle on the response object that caused this toggle to trigger\nSet(\n    varDialogResponse,\n    Last(colDialogResponses)\n);\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//  Send trace information of debug is enabled                                                      //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n/*--Dawid van Heerden-V0.14-2020/05/24: Ugly workaround to remove the image from the pen input from the response before sending it to the trace because images are not supported in trace*/\nIf(\n    varPopupDebugTrace,\n    Trace(\n        \"cmpPopup Response received\",\n        TraceSeverity.Information,\n        First(\n            DropColumns(\n                Table(varDialogResponse.responseData),\n                \"penInput\"\n            )\n        )\n    )\n);\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//  END: Function Initiation (NO modification required)                                             //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//  START: Actions (Modify as per business requirement)                                             //\n//      -Here we use a switch statement to determine which responseAction was 'sent' to the dialog, //\n//      and what should happen when then user clicks on Yes or selects an option from the drop down //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\nIf(\n    !IsBlank(varDialogResponse.responseAction),\n    //The trigger will only action something if a responseAction value was sent to the dialog\n    //The below examples are added to show the different ways that data is retrieved based on the type of       input that was specified in the popup instruction\n    Switch(\n        varDialogResponse.responseAction,\n        \"Get Text Value\",\n        Set(\n            varText,\n            varDialogResponse.responseData.textInput\n        ),\n        \"Get Text Array Value(s)\",\n        Set(\n            varTextArray,\n            varDialogResponse.responseData.textArray\n        ),\n        \"Get Office365Users Selected Value(s)\",\n        Set(\n            varO365,\n            varDialogResponse.responseData.office365Users\n        ),\n        \"Get Rating Value\",\n        Set(\n            varRating,\n            varDialogResponse.responseData.rating\n        ),\n        \"Get Slider Value\",\n        Set(\n            varSlider,\n            varDialogResponse.responseData.slider\n        ),\n        \"Get Pen Input Value\",\n        Set(\n            VarPenInput,\n            varDialogResponse.responseData.penInput\n        ),\n        \"Get Pen Input Value in Base64\",\n        Set(\n            VarPenInputBase64,\n            varDialogResponse.responseData.penInputBase64\n        )\n    )\n);\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//  END: Actions (Modify as per ber business requirement)                                           //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//  Send trace information of debug is enabled                                                      //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n/*--Dawid van Heerden-V0.14-2020/05/24: Ugly workaround to remove the image from the pen input from the response before sending it to the trace because images are not supported in trace*/\nIf(\n    varPopupDebugTrace,\n    Trace(\n        \"cmpPopup Response actioned\",\n        TraceSeverity.Information,\n        First(\n            DropColumns(\n                Table(varDialogResponse.responseData),\n                \"penInput\"\n            )\n        )\n    )\n);\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//  Remove the response that was received from the dialog                                           //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\nRemove(\n    colDialogResponses,\n    varDialogResponse\n);\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//  This section can be ignore, but not deleted. It is required to set variables in the app         //\n//  that the component might need.                                                                  //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\nIf(\n    false,//This will obviously never set the variable and just sets the variable schema\n    Set(\n        varPopupDebugTrace,\n        false\n    )\n)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnCheck",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.tglDialogResponseTrigger"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogResponses"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2423,
+                  "charOffset": 449,
+                  "snippet": {
+                    "text": "//////////////////////////////////////////////////////////////////////////////////////////////////\n//  Write response to colDialogResponses collection in order for action toggle in main app      //\n//  to fire actions on response                                                                 //\n//////////////////////////////////////////////////////////////////////////////////////////////////\nSwitch(\n    mdGalButtons.Selected.key,\n    \"ok\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Ok\",\n            responseData: {\n                textInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextInput\",\n                    mdInputText.Text,\n                    Blank()\n                ),\n                rating: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Rating\",\n                    mdInputRating.Value,\n                    Blank()\n                ),\n                slider: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Slider\",\n                    mdInputSlider.Value,\n                    Blank()\n                ),\n                textArray: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextArray\",\n                    mdInputArrayText.SelectedItems.Value,\n                    Blank()\n                ),\n                office365Users: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Office365Users\",\n                    mdInput365Users.SelectedItems,\n                    Blank()\n                ),\n                penInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"PenInput\",\n                    mdInputPen.Image,\n                    Blank()\n                ),\n                penInputBase64: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"PenInput\",\n                    Substitute(\n                        Last(\n                            Split(\n                                JSON(\n                                    mdInputPen.Image,\n                                    JSONFormat.IncludeBinaryData\n                                ),\n                                \",\"\n                            )\n                        ).Result,\n                        \"\"\"\",\n                        \"\"\n                    ),\n                    Blank()\n                )\n            },\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"yes\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Yes\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"no\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"No\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"cancel\",\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    )\n);\nReset(cmpModalDialog)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogResponses"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 80,
+                  "charOffset": 2878,
+                  "snippet": {
+                    "text": "//////////////////////////////////////////////////////////////////////////////////////////////////\n//  Write response to colDialogResponses collection in order for action toggle in main app      //\n//  to fire actions on response                                                                 //\n//////////////////////////////////////////////////////////////////////////////////////////////////\nSwitch(\n    mdGalButtons.Selected.key,\n    \"ok\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Ok\",\n            responseData: {\n                textInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextInput\",\n                    mdInputText.Text,\n                    Blank()\n                ),\n                rating: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Rating\",\n                    mdInputRating.Value,\n                    Blank()\n                ),\n                slider: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Slider\",\n                    mdInputSlider.Value,\n                    Blank()\n                ),\n                textArray: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextArray\",\n                    mdInputArrayText.SelectedItems.Value,\n                    Blank()\n                ),\n                office365Users: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Office365Users\",\n                    mdInput365Users.SelectedItems,\n                    Blank()\n                ),\n                penInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"PenInput\",\n                    mdInputPen.Image,\n                    Blank()\n                ),\n                penInputBase64: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"PenInput\",\n                    Substitute(\n                        Last(\n                            Split(\n                                JSON(\n                                    mdInputPen.Image,\n                                    JSONFormat.IncludeBinaryData\n                                ),\n                                \",\"\n                            )\n                        ).Result,\n                        \"\"\"\",\n                        \"\"\n                    ),\n                    Blank()\n                )\n            },\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"yes\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Yes\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"no\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"No\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"cancel\",\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    )\n);\nReset(cmpModalDialog)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogInstructions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 267,
+                  "charOffset": 2975,
+                  "snippet": {
+                    "text": "//////////////////////////////////////////////////////////////////////////////////////////////////\n//  Write response to colDialogResponses collection in order for action toggle in main app      //\n//  to fire actions on response                                                                 //\n//////////////////////////////////////////////////////////////////////////////////////////////////\nSwitch(\n    mdGalButtons.Selected.key,\n    \"ok\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Ok\",\n            responseData: {\n                textInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextInput\",\n                    mdInputText.Text,\n                    Blank()\n                ),\n                rating: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Rating\",\n                    mdInputRating.Value,\n                    Blank()\n                ),\n                slider: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Slider\",\n                    mdInputSlider.Value,\n                    Blank()\n                ),\n                textArray: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextArray\",\n                    mdInputArrayText.SelectedItems.Value,\n                    Blank()\n                ),\n                office365Users: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Office365Users\",\n                    mdInput365Users.SelectedItems,\n                    Blank()\n                ),\n                penInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"PenInput\",\n                    mdInputPen.Image,\n                    Blank()\n                ),\n                penInputBase64: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"PenInput\",\n                    Substitute(\n                        Last(\n                            Split(\n                                JSON(\n                                    mdInputPen.Image,\n                                    JSONFormat.IncludeBinaryData\n                                ),\n                                \",\"\n                            )\n                        ).Result,\n                        \"\"\"\",\n                        \"\"\n                    ),\n                    Blank()\n                )\n            },\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"yes\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Yes\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"no\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"No\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"cancel\",\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    )\n);\nReset(cmpModalDialog)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogResponses"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 80,
+                  "charOffset": 3248,
+                  "snippet": {
+                    "text": "//////////////////////////////////////////////////////////////////////////////////////////////////\n//  Write response to colDialogResponses collection in order for action toggle in main app      //\n//  to fire actions on response                                                                 //\n//////////////////////////////////////////////////////////////////////////////////////////////////\nSwitch(\n    mdGalButtons.Selected.key,\n    \"ok\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Ok\",\n            responseData: {\n                textInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextInput\",\n                    mdInputText.Text,\n                    Blank()\n                ),\n                rating: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Rating\",\n                    mdInputRating.Value,\n                    Blank()\n                ),\n                slider: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Slider\",\n                    mdInputSlider.Value,\n                    Blank()\n                ),\n                textArray: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextArray\",\n                    mdInputArrayText.SelectedItems.Value,\n                    Blank()\n                ),\n                office365Users: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Office365Users\",\n                    mdInput365Users.SelectedItems,\n                    Blank()\n                ),\n                penInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"PenInput\",\n                    mdInputPen.Image,\n                    Blank()\n                ),\n                penInputBase64: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"PenInput\",\n                    Substitute(\n                        Last(\n                            Split(\n                                JSON(\n                                    mdInputPen.Image,\n                                    JSONFormat.IncludeBinaryData\n                                ),\n                                \",\"\n                            )\n                        ).Result,\n                        \"\"\"\",\n                        \"\"\n                    ),\n                    Blank()\n                )\n            },\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"yes\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Yes\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"no\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"No\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"cancel\",\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    )\n);\nReset(cmpModalDialog)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogInstructions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 266,
+                  "charOffset": 3344,
+                  "snippet": {
+                    "text": "//////////////////////////////////////////////////////////////////////////////////////////////////\n//  Write response to colDialogResponses collection in order for action toggle in main app      //\n//  to fire actions on response                                                                 //\n//////////////////////////////////////////////////////////////////////////////////////////////////\nSwitch(\n    mdGalButtons.Selected.key,\n    \"ok\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Ok\",\n            responseData: {\n                textInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextInput\",\n                    mdInputText.Text,\n                    Blank()\n                ),\n                rating: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Rating\",\n                    mdInputRating.Value,\n                    Blank()\n                ),\n                slider: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Slider\",\n                    mdInputSlider.Value,\n                    Blank()\n                ),\n                textArray: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextArray\",\n                    mdInputArrayText.SelectedItems.Value,\n                    Blank()\n                ),\n                office365Users: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Office365Users\",\n                    mdInput365Users.SelectedItems,\n                    Blank()\n                ),\n                penInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"PenInput\",\n                    mdInputPen.Image,\n                    Blank()\n                ),\n                penInputBase64: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"PenInput\",\n                    Substitute(\n                        Last(\n                            Split(\n                                JSON(\n                                    mdInputPen.Image,\n                                    JSONFormat.IncludeBinaryData\n                                ),\n                                \",\"\n                            )\n                        ).Result,\n                        \"\"\"\",\n                        \"\"\n                    ),\n                    Blank()\n                )\n            },\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"yes\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Yes\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"no\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"No\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"cancel\",\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    )\n);\nReset(cmpModalDialog)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogResponses"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 80,
+                  "charOffset": 3616,
+                  "snippet": {
+                    "text": "//////////////////////////////////////////////////////////////////////////////////////////////////\n//  Write response to colDialogResponses collection in order for action toggle in main app      //\n//  to fire actions on response                                                                 //\n//////////////////////////////////////////////////////////////////////////////////////////////////\nSwitch(\n    mdGalButtons.Selected.key,\n    \"ok\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Ok\",\n            responseData: {\n                textInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextInput\",\n                    mdInputText.Text,\n                    Blank()\n                ),\n                rating: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Rating\",\n                    mdInputRating.Value,\n                    Blank()\n                ),\n                slider: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Slider\",\n                    mdInputSlider.Value,\n                    Blank()\n                ),\n                textArray: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextArray\",\n                    mdInputArrayText.SelectedItems.Value,\n                    Blank()\n                ),\n                office365Users: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Office365Users\",\n                    mdInput365Users.SelectedItems,\n                    Blank()\n                ),\n                penInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"PenInput\",\n                    mdInputPen.Image,\n                    Blank()\n                ),\n                penInputBase64: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"PenInput\",\n                    Substitute(\n                        Last(\n                            Split(\n                                JSON(\n                                    mdInputPen.Image,\n                                    JSONFormat.IncludeBinaryData\n                                ),\n                                \",\"\n                            )\n                        ).Result,\n                        \"\"\"\",\n                        \"\"\n                    ),\n                    Blank()\n                )\n            },\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"yes\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Yes\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"no\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"No\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"cancel\",\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    )\n);\nReset(cmpModalDialog)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogInstructions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 80,
+                  "charOffset": 3716,
+                  "snippet": {
+                    "text": "//////////////////////////////////////////////////////////////////////////////////////////////////\n//  Write response to colDialogResponses collection in order for action toggle in main app      //\n//  to fire actions on response                                                                 //\n//////////////////////////////////////////////////////////////////////////////////////////////////\nSwitch(\n    mdGalButtons.Selected.key,\n    \"ok\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Ok\",\n            responseData: {\n                textInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextInput\",\n                    mdInputText.Text,\n                    Blank()\n                ),\n                rating: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Rating\",\n                    mdInputRating.Value,\n                    Blank()\n                ),\n                slider: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Slider\",\n                    mdInputSlider.Value,\n                    Blank()\n                ),\n                textArray: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextArray\",\n                    mdInputArrayText.SelectedItems.Value,\n                    Blank()\n                ),\n                office365Users: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Office365Users\",\n                    mdInput365Users.SelectedItems,\n                    Blank()\n                ),\n                penInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"PenInput\",\n                    mdInputPen.Image,\n                    Blank()\n                ),\n                penInputBase64: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"PenInput\",\n                    Substitute(\n                        Last(\n                            Split(\n                                JSON(\n                                    mdInputPen.Image,\n                                    JSONFormat.IncludeBinaryData\n                                ),\n                                \",\"\n                            )\n                        ).Result,\n                        \"\"\"\",\n                        \"\"\n                    ),\n                    Blank()\n                )\n            },\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"yes\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Yes\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"no\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"No\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"cancel\",\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    )\n);\nReset(cmpModalDialog)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogInstructions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.cmpModalDialogWelcome.HtmlText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.cmpModalDialogWelcome.HtmlText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "HtmlText",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.cmpModalDialogWelcome"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-HtmlShouldNotBeInteractive",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.cmpModalDialogInstructions.HtmlText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.cmpModalDialogInstructions.HtmlText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "HtmlText",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.cmpModalDialogInstructions"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-HtmlShouldNotBeInteractive",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdInactiveRect.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdInactiveRect.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdInactiveRect"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdInactiveRect.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdInactiveRect.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdInactiveRect"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.cmpModalDialogUpdates.HtmlText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.cmpModalDialogUpdates.HtmlText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "HtmlText",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.cmpModalDialogUpdates"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-HtmlShouldNotBeInteractive",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.tglDialogResponseTrigger.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.tglDialogResponseTrigger.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.tglDialogResponseTrigger"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputPen"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputPen",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdInputPen"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-AlternativeInputNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputPen.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputPen.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdInputPen"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInput365Users.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInput365Users.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdInput365Users"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputArrayText.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputArrayText.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdInputArrayText"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputSlider.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputSlider.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdInputSlider"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputRating.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputRating.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdInputRating"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputText.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputText.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdInputText"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdLblLink.HtmlText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdLblLink.HtmlText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "HtmlText",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdLblLink"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-HtmlShouldNotBeInteractive",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.cmpModalDialogSupport.HtmlText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.cmpModalDialogSupport.HtmlText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "HtmlText",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.cmpModalDialogSupport"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-HtmlShouldNotBeInteractive",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Demo Screen.icoBack.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Demo Screen.icoBack.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Demo Screen",
+                "type": "Demo Screen.icoBack"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Demo Screen.icoBack.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Demo Screen.icoBack.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Demo Screen",
+                "type": "Demo Screen.icoBack"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Demo Screen.htmlWelcomeDemo.HtmlText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Demo Screen.htmlWelcomeDemo.HtmlText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "HtmlText",
+                "module": "Demo Screen",
+                "type": "Demo Screen.htmlWelcomeDemo"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-HtmlShouldNotBeInteractive",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Demo Screen.tglDialogResponseTrigger_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Demo Screen.tglDialogResponseTrigger_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Demo Screen",
+                "type": "Demo Screen.tglDialogResponseTrigger_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Welcome Screen.icoBack_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Welcome Screen.icoBack_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Welcome Screen",
+                "type": "Welcome Screen.icoBack_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Welcome Screen.icoBack_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Welcome Screen.icoBack_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Welcome Screen",
+                "type": "Welcome Screen.icoBack_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Welcome Screen.htmlWelcome.HtmlText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Welcome Screen.htmlWelcome.HtmlText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "HtmlText",
+                "module": "Welcome Screen",
+                "type": "Welcome Screen.htmlWelcome"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-HtmlShouldNotBeInteractive",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Welcome Screen.imgUkuvumaSolutions.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Welcome Screen.imgUkuvumaSolutions.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Welcome Screen",
+                "type": "Welcome Screen.imgUkuvumaSolutions"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Welcome Screen.imgUkuvumaSolutions.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Welcome Screen.imgUkuvumaSolutions.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Welcome Screen",
+                "type": "Welcome Screen.imgUkuvumaSolutions"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.varText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.varText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varText",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.varTextArray"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.varTextArray",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varTextArray",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.varO365"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.varO365",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varO365",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.varRating"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.varRating",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varRating",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.varSlider"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.varSlider",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varSlider",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.VarPenInput"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.VarPenInput",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "VarPenInput",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.VarPenInputBase64"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.VarPenInputBase64",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "VarPenInputBase64",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        }
+      ],
+      "tool": {
+        "driver": {
+          "fullName": "PowerApps app checker",
+          "name": "PowerApps app checker",
+          "rules": [
+            {
+              "id": "app-WarnComponentUsingCollection",
+              "messageStrings": {
+                "issue": {
+                  "text": "Warning: Formula within canvas component manipulates collection \"{0}\"."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Within a canvas component, avoid using functions that manipulate a collection, such as Collect(), ClearCollect(), and Remove(), that could cause a conflict with collections in the app."
+                ],
+                "level": "Medium",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "acc-HtmlShouldNotBeInteractive",
+              "messageStrings": {
+                "issue": {
+                  "text": "If this HTML contains interactive elements, consider using another method, or remove the HTML from this element."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Use another method instead of HTML, or remove the HTML from this element."
+                ],
+                "level": "Low",
+                "primaryCategory": "accessibility",
+                "whyFix": "Your app won't work correctly and will not be accessible if you place interactive HTML elements."
+              }
+            },
+            {
+              "id": "acc-AccessibleLabelNeeded",
+              "messageStrings": {
+                "issue": {
+                  "text": "Missing accessible label"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Edit the accessible label property to describe the item."
+                ],
+                "level": "Medium",
+                "primaryCategory": "accessibility",
+                "whyFix": "If there's no accessible text, people who can’t see the screen won't understand what’s in images and controls."
+              }
+            },
+            {
+              "id": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+              "messageStrings": {
+                "issue": {
+                  "text": "Missing tab stop"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Set TabIndex to 0 or greater to ensure that interactive elements have a tab stop."
+                ],
+                "level": "Medium",
+                "primaryCategory": "accessibility",
+                "whyFix": "People who use the keyboard with your app will not be able to access this element without a tab stop."
+              }
+            },
+            {
+              "id": "acc-AlternativeInputNeeded",
+              "messageStrings": {
+                "issue": {
+                  "text": "Add another input method"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Add a text input in addition to the pen control for an accessible experience."
+                ],
+                "level": "Low",
+                "primaryCategory": "accessibility",
+                "whyFix": "Some users can't use a pen and require another way to input information. Example: Typing in a signature."
+              }
+            },
+            {
+              "id": "app-UnusedVariables",
+              "messageStrings": {
+                "issue": {
+                  "text": "Unused variable"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove the unused variable."
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "This variable is declared but is not referenced by any control, so it is not needed."
+              }
+            }
+          ],
+          "version": "1.285"
+        }
+      }
+    }
+  ],
+  "version": "2.1.0"
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "new_businessunits",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "new_businessunit",
+    "MaxGetRowsCount": 500,
+    "Name": "BusinessUnits",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "new_businessunit_AsyncOperations": "System Jobs",
+      "new_businessunit_BulkDeleteFailures": "Bulk Delete Failures",
+      "new_businessunit_DuplicateBaseRecord": "Duplicate Records (new_businessunit_DuplicateBaseRecord)",
+      "new_businessunit_DuplicateMatchingRecord": "Duplicate Records (new_businessunit_DuplicateMatchingRecord)",
+      "new_businessunit_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "new_BusinessUnit_ParentBusinessUnit_new_B": "BusinessUnits",
+      "new_businessunit_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "new_businessunit_ProcessSession": "Process Sessions",
+      "new_businessunit_SyncErrors": "Sync Errors",
+      "new_businessunitid": "BusinessUnit",
+      "new_CostCentre_BusinessUnit_new_BusinessU": "Cost Centres (new_CostCentre_BusinessUnit_new_BusinessU)",
+      "new_CostCentre_test_new_BusinessUnit": "Cost Centres (new_CostCentre_test_new_BusinessUnit)",
+      "new_hierarchystructure": "Hierarchy Structure",
+      "new_name": "Name",
+      "new_officeselection": "Office Selection",
+      "new_ParentBusinessUnit": "Parent Business Unit",
+      "organizationid": "Organization Id",
+      "overriddencreatedon": "Record Created On",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "BusinessUnits",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "BusinessUnits (Views)",
+    "Name": "_new_businessunit_views",
+    "RelatedEntityName": "BusinessUnits",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "352fa365-49ef-4466-b385-142af5068d86": "BusinessUnit Associated View",
+      "4700bc1a-780f-4166-b040-d00e981032ea": "BusinessUnit Lookup View",
+      "55c715f7-910b-4f8d-b468-2719b88b862e": "BusinessUnit Advanced Find View",
+      "bb00d9cc-6df1-44d4-90c3-10ff4688c3e3": "Active BusinessUnits",
+      "ffcebefd-6e79-426a-ba5f-cda1861c8041": "Inactive BusinessUnits"
+    }
+  },
+  {
+    "DisplayName": "Status (BusinessUnits)",
+    "Name": "new_businessunit_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "BusinessUnits"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "BusinessUnits",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (BusinessUnits)",
+    "Name": "new_businessunit_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "BusinessUnits"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "BusinessUnits",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Office Selection Choices",
+    "Name": "new_officeselection",
+    "OptionSetInfoNameMapping": {
+      "100000000": "Back-Office",
+      "100000001": "Front-Office"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "new_officeselection",
+        "OptionSetReferenceEntityName": "BusinessUnits"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "new_officeselection",
+    "RelatedEntityName": "BusinessUnits",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Structure Hierarchy Choices",
+    "Name": "new_structurehierarchy",
+    "OptionSetInfoNameMapping": {
+      "100000000": "Entity",
+      "100000001": "Sector",
+      "100000002": "Department",
+      "100000003": "Section"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "new_hierarchystructure",
+        "OptionSetReferenceEntityName": "BusinessUnits"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "new_hierarchystructure",
+    "RelatedEntityName": "BusinessUnits",
+    "Type": "OptionSetInfo"
+  }
+]

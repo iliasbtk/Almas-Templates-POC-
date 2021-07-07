@@ -1,0 +1,140 @@
+"'Welcome Screen' As screen":
+    Height: =Max(App.Height, App.DesignHeight)
+    Orientation: =If('Welcome Screen'.Width < 'Welcome Screen'.Height, Layout.Vertical, Layout.Horizontal)
+    Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= 'Welcome Screen'.Width)
+    Width: =Max(App.Width, App.DesignWidth)
+
+    htmlWelcome As htmlViewer:
+        Color: =RGBA(34, 34, 34, 1)
+        Height: =635
+        HoverBorderColor: =htmlWelcome.BorderColor
+        HtmlText: |-
+            ="<html><p style='text-align: center;'><strong><span style='color: #993366;'>Welcome to the Canvas Power App Modal Dialog Component</span></strong></p>
+            <p style='text-align: left;'>One of the very frequent use cases in any application environment, is the ability to present the user with a dialog or popup to either display information or collect information.</p>
+            <p style='text-align: left;'>Previously this was done by placing various controls onto the screen and spending a significant amount of time styling these and adding functionality to try and simulate a popup. This unfortunately present a many challenges. Rapid hair loss being one of them.</p>
+            <p style='text-align: left;'>Originally developed by Ukuvuma Solutions and donated to the Power Apps community, this new modal dialog component can be used to create a popup function in your Power Apps, without recreating all the logic from scratch for every popup and every app.</p>
+            <p><span style='color: #333333;'>This application was designed to ship with the component to make it easy to test, reference and demonstrate the functionality that has to offer.</span></p>
+            <p><span style='color: #333333;'><strong>Updates:</strong></span></p>
+            <p><span style='color: #333333;'>Please regularly check for updates at <a href='http://aka.ms/powerapps-popup'>http://aka.ms/powerapps-popup</a> and by following us on social streams:</span></p>
+            <p><span style='color: #333333;'><strong>Contributors</strong>:</span></p>
+            <p><span style='color: #333333;'>We are very proud to announce that Sancho and Todd have been added as contributors to the component. Please make sure that you follow them on the social streams for updates and news, and just great content in general&nbsp;<img src='https://html-online.com/editor/tinymce4_6_5/plugins/emoticons/img/smiley-cool.gif' alt='cool' /></span></p>
+            <table>
+            <tbody>
+            <tr>
+            <td><strong>&nbsp;Contributor</strong></td>
+            <td><strong>Twitter</strong></td>
+            <td><strong>YouTube</strong></td>
+            </tr>
+            <tr>
+            <td>Dawid van Heerden</td>
+            <td>@DavesTechTips</td>
+            <td><a href='https://www.youtube.com/DavesTechTips'>https://youtube.com/DavesTechTips</a></td>
+            </tr>
+            <tr>
+            <td>Sancho Harker</td>
+            <td>@iAm_ManCat</td>
+            <td><a href='https://bit.ly/ManCatYT'>https://bit.ly/ManCatYT</a></td>
+            </tr>
+            <tr>
+            <td>Todd Baginski</td>
+            <td>
+            <div class='css-901oao css-bfa6kz r-1re7ezh r-18u37iz r-1qd0xha r-a023e6 r-16dba41 r-ad9z0x r-bcqeeo r-qvutc0' dir='ltr'><span class='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0'>@toddbaginski</span></div>
+            </td>
+            <td><a href='https://www.youtube.com/ToddBaginski'>https:/youtube.com/ToddBaginski</a></td>
+            </tr>
+            </tbody>
+            </table></html>"
+        PaddingLeft: =Parent.Width * 5%
+        PaddingRight: =Parent.Width * 5%
+        PressedBorderColor: =htmlWelcome.BorderColor
+        Size: =13
+        Width: =1366
+        Y: =48
+        ZIndex: =1
+
+    lblHeaderWelcomeScreen As label:
+        Align: =Center
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(116, 39, 116, 1)
+        FocusedBorderColor: =lblHeaderWelcomeScreen.BorderColor
+        FontWeight: =Semibold
+        Height: =48
+        HoverBorderColor: =lblHeaderWelcomeScreen.BorderColor
+        HoverColor: =lblHeaderWelcomeScreen.Color
+        HoverFill: =lblHeaderWelcomeScreen.Fill
+        PressedBorderColor: =lblHeaderWelcomeScreen.BorderColor
+        PressedColor: =lblHeaderWelcomeScreen.Color
+        PressedFill: =lblHeaderWelcomeScreen.Fill
+        Size: =16
+        Text: ="Modal Dialog Demo" & " - " & cmpModalDialog_1.Version
+        Width: =Parent.Width
+        ZIndex: =2
+
+    btnDirectToDemo As button:
+        BorderColor: =ColorFade(btnDirectToDemo.Fill, -15%)
+        Fill: =lblHeaderWelcomeScreen.Fill
+        FocusedBorderColor: =btnDirectToDemo.BorderColor
+        HoverBorderColor: =ColorFade(btnDirectToDemo.BorderColor, 20%)
+        HoverFill: =ColorFade(lblHeaderWelcomeScreen.Fill,15%)
+        OnSelect: =Navigate('Demo Screen')
+        PressedBorderColor: =btnDirectToDemo.Fill
+        PressedColor: =White
+        PressedFill: =ColorFade(lblHeaderWelcomeScreen.Fill,-20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="Demo Screen >"
+        X: =1142
+        Y: =718
+        ZIndex: =3
+
+    imgUkuvumaSolutions As image:
+        FocusedBorderColor: =imgUkuvumaSolutions.BorderColor
+        Height: =58
+        HoverBorderColor: =ColorFade(imgUkuvumaSolutions.BorderColor, 20%)
+        HoverFill: =ColorFade(imgUkuvumaSolutions.Fill, 20%)
+        Image: =UkuvumaLogo
+        OnSelect: |-
+            =Launch("http://www.ukuvuma.co.za")
+        PressedBorderColor: =ColorFade(imgUkuvumaSolutions.BorderColor, -20%)
+        PressedFill: =ColorFade(imgUkuvumaSolutions.Fill, -20%)
+        Width: =136
+        X: =196
+        Y: =709
+        ZIndex: =4
+
+    lblDonatedBy As label:
+        Color: =RGBA(34, 34, 34, 1)
+        FocusedBorderColor: =lblDonatedBy.BorderColor
+        HoverBorderColor: =lblDonatedBy.BorderColor
+        HoverColor: =lblDonatedBy.Color
+        HoverFill: =lblDonatedBy.Fill
+        PressedBorderColor: =lblDonatedBy.BorderColor
+        PressedColor: =lblDonatedBy.Color
+        PressedFill: =lblDonatedBy.Fill
+        Size: =10
+        Text: ="Proudly donated by"
+        Width: =142
+        X: =54
+        Y: =718
+        ZIndex: =5
+
+    icoBack_1 As icon.ChevronLeft:
+        Color: =White
+        DisabledFill: =icoBack_1.Fill
+        FocusedBorderColor: =icoBack_1.BorderColor
+        Height: =34
+        HoverBorderColor: =ColorFade(icoBack_1.BorderColor, 20%)
+        HoverColor: =ColorFade(icoBack_1.Color, 20%)
+        HoverFill: =icoBack_1.Fill
+        Icon: =Icon.Cancel
+        OnSelect: =Exit()
+        PressedBorderColor: =ColorFade(icoBack_1.BorderColor, -20%)
+        PressedColor: =ColorFade(icoBack_1.Color, -20%)
+        PressedFill: =icoBack_1.Fill
+        Width: =54
+        X: =1312
+        Y: =7
+        ZIndex: =6
+
