@@ -1,20 +1,23 @@
 sectorInput As screen:
     LoadingSpinnerColor: =RGBA(73, 130, 5, 1)
     OnVisible: =
-
+# Screen header
     cmpHeaderSector As cmpHeader:
         HeadingIcon: ='Almas Image'
         HeadingText: ="Sector Input Screen"
-
+# Container (Sectors table)
     "galSectorInput As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+#Dimensions and colors of the container
         BorderColor: =RGBA(166, 166, 166, 1)
         BorderStyle: =Solid
         Fill: =RGBA(255,255,255,1)
         Height: =573
+#
         Items: |
             =Filter(BusinessUnits,'Hierarchy Structure'='Structure Hierarchy Choices'.Sector)
             
         Layout: =Layout.Vertical
+#When a row is selected
         OnSelect: =
         TemplateFill: |
             =If(ThisItem.IsSelected,RGBA(0, 0, 0, 5%),White)
@@ -24,7 +27,7 @@ sectorInput As screen:
         X: =152
         Y: =120
         ZIndex: =1
-
+# Delete an entry
         btDelSector As icon.Trash:
             BorderColor: =RGBA(166, 166, 166, 1)
             Color: =RGBA(73, 130, 5, 1)
@@ -47,7 +50,7 @@ sectorInput As screen:
             X: =990
             Y: =1
             ZIndex: =1
-
+# Save changes on an entry
         btSaveSector As icon.Save:
             BorderColor: =RGBA(166, 166, 166, 1)
             Color: =RGBA(73, 130, 5, 1)
@@ -83,7 +86,7 @@ sectorInput As screen:
             X: =949
             Y: =1
             ZIndex: =5
-
+# Cancel changes on entry
         btCancelSector As icon.Save:
             BorderColor: =RGBA(166, 166, 166, 1)
             Color: =RGBA(73, 130, 5, 1)
@@ -111,7 +114,7 @@ sectorInput As screen:
             X: =915
             Y: =1
             ZIndex: =6
-
+#Edit an entry
         btEditSector As icon.Edit:
             BorderColor: =RGBA(166, 166, 166, 1)
             Color: =RGBA(73, 130, 5, 1)
@@ -144,7 +147,7 @@ sectorInput As screen:
             X: =40
             Y: =40
             ZIndex: =10
-
+# Edit sector name (input text)
             txtSectorName As text:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 BorderStyle: =BorderStyle.None
@@ -177,7 +180,7 @@ sectorInput As screen:
                 Tooltip: ="Add the Sector Name"
                 Width: =365
                 ZIndex: =2
-
+# Edit office selection (select from a dropdown list)
             ddSectorBOFO As dropdown:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 BorderStyle: =BorderStyle.None
@@ -216,7 +219,7 @@ sectorInput As screen:
                 X: =730
                 Y: =1
                 ZIndex: =4
-
+# Edit entity name (select from a dropdown list)
             ddSectorEntity As dropdown:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 BorderStyle: =BorderStyle.None
@@ -263,14 +266,14 @@ sectorInput As screen:
         NotCompletedFill: =varSideBarColours.NotcompletedFill
         TextColor: =varSideBarColours.TextColor
         ZIndex: =2
-
+# Container (header)
     grpSectorGalleryHeading As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
         ZIndex: =6
-
+# header background color and format
         labSectorHeading As label:
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
@@ -288,7 +291,7 @@ sectorInput As screen:
             X: =152
             Y: =66
             ZIndex: =3
-
+# Header format and content
         labSector As label:
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
@@ -340,7 +343,7 @@ sectorInput As screen:
             X: =847
             Y: =66
             ZIndex: =6
-
+# Button to add a new entry
     btAddSector As icon.Add:
         BorderColor: =RGBA(166, 166, 166, 1)
         Color: =RGBA(73, 130, 5, 1)
@@ -378,7 +381,7 @@ sectorInput As screen:
         X: =1132
         Y: =73
         ZIndex: =7
-
+# Submit sectors entires
     btSectorSubmit As button:
         BorderColor: =RGBA(0, 0, 0, 0)
         DisabledBorderColor: =RGBA(0, 0, 0, 0)
@@ -407,13 +410,14 @@ sectorInput As screen:
         Y: =705
         ZIndex: =13
 
+# Delete an entry
     grpSectorDeletion As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
         ZIndex: =14
-
+# Delete alert message format
         rectBackground As rectangle:
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
@@ -444,7 +448,7 @@ sectorInput As screen:
             X: =353
             Y: =302
             ZIndex: =9
-
+# Yes button (to confirm entry supression)
         btYes As button:
             BorderColor: =RGBA(0, 0, 0, 0)
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
@@ -473,7 +477,7 @@ sectorInput As screen:
             X: =388
             Y: =376
             ZIndex: =10
-
+# Cancel button (to cancel entry supression)
         btCancel As button:
             BorderColor: =RGBA(0, 0, 0, 0)
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
@@ -501,7 +505,7 @@ sectorInput As screen:
             X: =603
             Y: =376
             ZIndex: =11
-
+# Alert message to confirm the entry supression
         labSectorDeletionMsg As label:
             Align: =Align.Center
             AutoHeight: =true
