@@ -1,8 +1,10 @@
-# Ilias
+# onStart method is called when the app is opened
+# Define the navigation side bar content
+
 App As appinfo:
     BackEnabled: =false
     OnStart: |
-        =ClearCollect(
+        =ClearCollect(    
             varSidebarMenu,
             Table(
                 {
